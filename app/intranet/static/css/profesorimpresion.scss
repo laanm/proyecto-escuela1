@@ -1,0 +1,262 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+}
+
+#MenuBotones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    button{
+        margin-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.OverFlow{
+    width: 95vw;
+    overflow-y: scroll;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        padding-left: 0;
+        
+    }
+}
+#Listado{
+    border-collapse: collapse;
+    width: 100%;
+    tr{
+        transition: 0.5s;
+        max-width: 250px;
+        th{
+            
+            background-color: #005895;
+            color: white;
+            padding: 10px;
+            max-width: 250px;
+            height: 100%;
+        }
+        
+        td{
+            max-width: 250px;
+            text-align: center;
+            padding:15px; 
+            a{
+                font-weight: bold;
+                max-width: 250px;
+            }
+        }
+        &:nth-child(even){
+            background-color: rgb(227, 240, 255);
+        }
+        
+        &:hover{
+            background-color: gray;
+        }
+    }
+    
+
+}
+#CrearPeticion{
+    width: 140px;
+    height: 45px;
+   
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    &:hover {
+        
+        background-color: #00ffcc;
+        color: black;
+    }
+
+}
+
+.CrearPeticion2{
+    padding: 10px 50px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    margin: 10px;
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+#Accion{
+
+    padding: 0;
+    a{
+
+
+        button{
+            width: 80%;
+            max-height: 100%;
+            font-size: 20px;
+            border: 0;
+            
+            
+        }
+    }
+}
+.BotonEliminar{
+    width: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #ad0000;
+    color: white;
+    border: 2px solid #34495e;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+    
+    transition: all 0.5s;
+    &:hover {
+        
+        transform: scale(1.1);
+    }
+
+}
+
+#Ventana{
+    height: 1000px;
+    width: 50vw !important;
+    position: fixed;
+    left:25vw !important;
+    top: 5000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        width: 100%;
+        text-align: center;
+    }
+    input,select{
+        margin-bottom: 5px;
+        width: 70%;
+    }
+    label{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input{
+            margin-bottom:0;
+            margin-right: 5px;
+            width: fit-content;
+            height: fit-content;
+
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 2.5vw;
+        h1{
+            text-align: center;
+            font-size: large;
+        }
+    }
+
+}
+.AbrirVentana{
+animation-name: AnimSubirVentana;
+animation-fill-mode: forwards;
+animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+0%{
+    top:2000px;
+}
+100%{
+    top:5vh;
+}
+}
+.CerrarVentana{
+
+animation-name: AnimCerrarVentana;
+animation-fill-mode: forwards;
+animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+0%{
+    top:5vh;
+}
+100%{
+    top:2000px;
+}
+}
+
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

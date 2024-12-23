@@ -1,0 +1,165 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+#divImpresor {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.OverFlow {
+  width: 95vw;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 768px) {
+  .OverFlow {
+    width: 100vw;
+    padding-left: 0;
+  }
+}
+
+#Listado {
+  border-collapse: collapse;
+  width: 100%;
+}
+#Listado tr {
+  transition: 0.5s;
+}
+#Listado tr th {
+  background-color: #005895;
+  color: white;
+  padding: 10px;
+  min-width: 100px;
+  max-width: 250px;
+}
+#Listado tr td {
+  text-align: center;
+  padding: 10px;
+}
+#Listado tr:nth-child(even) {
+  background-color: rgb(227, 240, 255);
+}
+#Listado tr:hover {
+  background-color: gray;
+}
+
+#DivBuscador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#DivBuscador a {
+  margin-left: -20%;
+}
+@media only screen and (max-width: 768px) {
+  #DivBuscador {
+    width: 100%;
+  }
+  #DivBuscador #Buscador {
+    display: inline-grid;
+  }
+  #DivBuscador a {
+    margin-left: 0;
+  }
+}
+
+#CrearPeticion {
+  width: 130px;
+  height: 45px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+#CrearPeticion:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+#Impreso {
+  width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgb(0, 255, 213);
+  color: black;
+  border: 2px solid #003a2e;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-right: 5px;
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+#Impreso:hover {
+  transform: scale(1.1);
+}
+
+#Entregado {
+  width: 110px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgb(255, 0, 242);
+  color: black;
+  border: 2px solid #003a2e;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+#Entregado:hover {
+  transform: scale(1.1);
+}
+
+#Cargando {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.692);
+}
+#Cargando label {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #eee;
+  border-top: 10px solid #1abc9c;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=historialimpresor.css.map */

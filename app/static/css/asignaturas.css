@@ -1,0 +1,115 @@
+#Ventana {
+  height: 1000px;
+  width: 40vw;
+  position: fixed;
+  left: 30vw;
+  top: 5000px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana input, #Ventana select {
+  margin-bottom: 5px;
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 100px;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#divTablaAsignaturas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+#divTablaAsignaturas table {
+  margin-top: 10px;
+  width: 80%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #296d74;
+}
+#divTablaAsignaturas table tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#divTablaAsignaturas table tr th {
+  min-width: 50px;
+  width: 50px;
+  flex-grow: 1;
+  font-size: 20px;
+  text-align: center;
+  background-color: #34495e;
+  color: white;
+}
+#divTablaAsignaturas table tr td {
+  height: 70px;
+  height: 100%;
+  width: 100%;
+  min-width: 50px;
+  flex-grow: 1;
+  transition: 0.3s;
+  display: flex;
+  font-weight: bold;
+  flex-direction: column;
+  justify-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+#divTablaAsignaturas table tr td:nth-child(2) {
+  align-items: center;
+}
+#divTablaAsignaturas table tr:hover {
+  background-color: #04ebbd;
+}
+
+#CrearPeticion {
+  margin-top: 10px;
+  padding: 10px 40px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+#CrearPeticion:hover {
+  background-color: #1abc9c;
+}/*# sourceMappingURL=asignaturas.css.map */

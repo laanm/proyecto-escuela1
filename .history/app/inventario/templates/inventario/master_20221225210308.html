@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - {% block titulo %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/inventario/css/master.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>
+
+    {% block scripts %}{% endblock %}
+
+</head>
+<body>
+    <header>
+        <h1>Sistema de Inventario</h1>
+        <ul>
+            <li><a href="/inventario">Resumen</a></li>
+            <li><a href="/inventario/info">Inventario</a></li>
+        </ul>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}{% endblock %}
+</body>
+</html>

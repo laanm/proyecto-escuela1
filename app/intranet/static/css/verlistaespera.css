@@ -1,0 +1,206 @@
+#BotonesSuperiores {
+  width: 95%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1%;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  background-color: white;
+  border-radius: 10px;
+}
+#BotonesSuperiores input[type=number] {
+  width: 50px;
+}
+
+.ExtensionContacto {
+  border-top: 1px solid #005895;
+  border-left: 1px solid #005895;
+  border-right: 1px solid #005895;
+}
+
+.Contacto, .Contacto2 {
+  border-left: 1px solid #005895;
+  border-right: 1px solid #005895;
+  background-color: white !important;
+}
+.Contacto td, .Contacto2 td {
+  text-align: left !important;
+}
+
+.Contacto2 {
+  border-bottom: 1px solid #005895;
+}
+
+#Principal {
+  width: 95%;
+  height: 95%;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 1%;
+}
+#Principal table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+#Principal table tr {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#Principal table tr:hover {
+  background-color: #69e205 !important;
+}
+#Principal table th {
+  background-color: #005895;
+  color: white;
+}
+#Principal table td {
+  text-align: center;
+  height: 5vh;
+}
+#Principal table tr:nth-child(odd) {
+  background-color: #d8efff;
+}
+
+#Contenido {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  background: #cecece;
+  overflow-x: hidden;
+}
+
+.BotonAprobar {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #00a6d8;
+  color: #FFFFFF;
+  font-family: "Mulish";
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  border: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition-duration: 0.2s;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.BotonAprobar:hover {
+  background-color: #0085ad;
+}
+
+.BotonRechazar {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #dd3333;
+  color: #FFFFFF;
+  font-family: "Mulish";
+  font-style: normal;
+  font-size: medium;
+  font-weight: bold;
+  border: 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition-duration: 0.2s;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.BotonRechazar:hover {
+  background-color: #b12b2b;
+}
+
+#TablaEstudiante, #TablaPadre, #TablaMadre, #TablaAntecedentesAcademicos, #AntecedentesSociales, #AntecendesDeSalud, #TableDocumentacion, #TablaDeberes, .TablaPersonalizada {
+  border: solid black;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-collapse: collapse;
+}
+#TablaEstudiante th, #TablaPadre th, #TablaMadre th, #TablaAntecedentesAcademicos th, #AntecedentesSociales th, #AntecendesDeSalud th, #TableDocumentacion th, #TablaDeberes th, .TablaPersonalizada th {
+  background-color: rgb(255, 233, 106);
+  border: solid 1px;
+  color: black;
+}
+#TablaEstudiante td, #TablaPadre td, #TablaMadre td, #TablaAntecedentesAcademicos td, #AntecedentesSociales td, #AntecendesDeSalud td, #TableDocumentacion td, #TablaDeberes td, .TablaPersonalizada td {
+  border: solid 1px;
+  text-align: center;
+  color: black;
+}
+#TablaEstudiante td input, #TablaEstudiante td select, #TablaPadre td input, #TablaPadre td select, #TablaMadre td input, #TablaMadre td select, #TablaAntecedentesAcademicos td input, #TablaAntecedentesAcademicos td select, #AntecedentesSociales td input, #AntecedentesSociales td select, #AntecendesDeSalud td input, #AntecendesDeSalud td select, #TableDocumentacion td input, #TableDocumentacion td select, #TablaDeberes td input, #TablaDeberes td select, .TablaPersonalizada td input, .TablaPersonalizada td select {
+  text-align: center;
+  width: 100%;
+}
+#TablaEstudiante td input:focus, #TablaEstudiante td select:focus, #TablaPadre td input:focus, #TablaPadre td select:focus, #TablaMadre td input:focus, #TablaMadre td select:focus, #TablaAntecedentesAcademicos td input:focus, #TablaAntecedentesAcademicos td select:focus, #AntecedentesSociales td input:focus, #AntecedentesSociales td select:focus, #AntecendesDeSalud td input:focus, #AntecendesDeSalud td select:focus, #TableDocumentacion td input:focus, #TableDocumentacion td select:focus, #TablaDeberes td input:focus, #TablaDeberes td select:focus, .TablaPersonalizada td input:focus, .TablaPersonalizada td select:focus {
+  background-color: #00ffcc;
+  color: black;
+}
+#TablaEstudiante td input:hover, #TablaEstudiante td select:hover, #TablaPadre td input:hover, #TablaPadre td select:hover, #TablaMadre td input:hover, #TablaMadre td select:hover, #TablaAntecedentesAcademicos td input:hover, #TablaAntecedentesAcademicos td select:hover, #AntecedentesSociales td input:hover, #AntecedentesSociales td select:hover, #AntecendesDeSalud td input:hover, #AntecendesDeSalud td select:hover, #TableDocumentacion td input:hover, #TableDocumentacion td select:hover, #TablaDeberes td input:hover, #TablaDeberes td select:hover, .TablaPersonalizada td input:hover, .TablaPersonalizada td select:hover {
+  background-color: #00ffcc;
+}
+
+.MiniVentana {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  left: 35vw !important;
+  height: 20vh !important;
+  width: 40vw !important;
+  z-index: 1100 !important;
+}
+
+#Cerrar {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 200vh;
+  }
+  100% {
+    top: 5vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 5vh;
+  }
+  100% {
+    top: 200vh;
+  }
+}/*# sourceMappingURL=verlistaespera.css.map */

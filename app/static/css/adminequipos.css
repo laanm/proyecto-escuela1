@@ -1,0 +1,250 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+#DivGeneral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#Tabla {
+  margin-top: 5px;
+  border-collapse: collapse;
+  width: 100%;
+}
+#Tabla tr {
+  transition: 0.5s;
+  max-width: 250px;
+}
+#Tabla tr th {
+  background-color: #34495e;
+  color: white;
+  padding: 10px;
+  max-width: 250px;
+}
+#Tabla tr th:first-child {
+  border-top-left-radius: 10px;
+}
+#Tabla tr th:last-child {
+  border-top-right-radius: 10px;
+}
+#Tabla tr td {
+  max-width: 250px;
+  text-align: center;
+  padding: 15px;
+}
+#Tabla tr td a {
+  font-weight: bold;
+  max-width: 250px;
+}
+#Tabla tr:nth-child(even) {
+  background-color: rgb(227, 240, 255);
+}
+#Tabla tr:hover {
+  background-color: gray;
+}
+
+#DivBotones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Contenido {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#Contenido input {
+  width: 80%;
+}
+#Contenido img {
+  width: 300px !important;
+  height: 150px !important;
+}
+#Contenido textarea {
+  width: 80%;
+  height: 10%;
+}
+
+#ContenidoImagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ContenidoCodigos {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+  padding-bottom: 200px;
+}
+#ContenidoCodigos img {
+  padding-top: 5px;
+}
+#ContenidoCodigos input {
+  width: 20px;
+}
+
+#TablaCategorias {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+#TablaCategorias th {
+  width: 50%;
+  background-color: #34495e;
+  color: white;
+}
+
+#Ventana {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  left: 50vh;
+  top: 5000px;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* From https://css.glass */
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#Ventana img {
+  height: 80%;
+  width: 80%;
+}
+#Ventana button {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #Ventana {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 10vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 10vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+.OverFlow {
+  width: 95vw;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 768px) {
+  .OverFlow {
+    width: 100vw;
+    padding-left: 0;
+  }
+}
+
+.CrearPeticion {
+  margin-top: 5px;
+  padding: 10px 40px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+.CrearPeticion:hover {
+  background-color: #1abc9c;
+}
+@media only screen and (max-width: 768px) {
+  .CrearPeticion {
+    font-size: 15px;
+    padding: 15px;
+  }
+}
+
+.Eliminar {
+  padding: 5px 20px;
+  background-color: #000000;
+  color: white;
+  border: 2px solid rgb(255, 8, 0);
+  font-size: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+.Eliminar:hover {
+  background-color: #ff0000;
+}
+
+.Seleccionado {
+  background-color: #1abc9c;
+}/*# sourceMappingURL=adminequipos.css.map */

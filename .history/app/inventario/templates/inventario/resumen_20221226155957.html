@@ -1,0 +1,42 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Resumen{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/resumen.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div style="height: 80vh;">
+    <iframe id="metabase"
+    src="{{metabase.ruta}}"
+    frameborder="0"
+    width="100%"
+    height="100%"
+    allowtransparency
+></iframe>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script>
+    function test(){
+        // consultar url
+        // https://metabase.escuelasdechile.cl/api/session/properties
+        // https://metabase.escuelasdechile.cl/api/session/properties
+        // https://metabase.escuelasdechile.cl/api/session/properties
+        // con fetch
+        // https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Utilizando_Fetch
+
+        fetch("http://134.209.85.62:3000/public/dashboard/dbac2007-d1e7-4800-87be-6efcbce01043", {
+            method: "GET",
+            headers: {
+            },
+        }).then((response) => {
+            console.log("metabase html", response)
+        }).catch((error) => {
+            console.log(error)
+        })
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="{% static 'css/documentos.css'%}">
+    <link rel="stylesheet" href="{% static 'css/nav2.css'%}">
+</head>
+
+<body>
+    
+    {% include "nav2.html" %}
+    <div id="divAdministracion">
+        <h1>Documentos Liceo</h1>
+        <h2>Documentos Oficiales</h2>
+        <a href="{% static 'documentoscolegio/Acta1ConsejoEscolar2022.pdf' %}" >CUENTA PUBLICA 2021: ACTA</a>
+        <a href="{% static 'documentoscolegio/CuentaPublica2021.pdf' %}" >CUENTA PUBLICA 2021: PPT</a>
+        <a href="{% static 'documentoscolegio/28 REGLAMENTO INTERNO LEC 2020 V03.pdf' %}">Reglamento Interno LEC 2021-2022</a>
+        <a href="{% static 'documentoscolegio/ReglamnetoEval2020.pdf' %}">Reglamento Evaluación LEC 2021-2022</a>
+        <h2>Protocolos</h2>
+        <a href="{% static 'documentoscolegio/Anexo1PISE.pdf' %}">Programa Integral de Seguridad Escolar (PISE)</a>
+        <a href="{% static 'documentoscolegio/Anexo2ProtocoloVulneracionDerechos.pdf' %}">Protocolo de Vulneración de Derechos</a>
+        <a href="{% static 'documentoscolegio/Anexo3ProtocoloAbusoAgresionSexual.pdf' %}">Protocolo Abuso o Agresión sexual</a>
+        <a href="{% static 'documentoscolegio/Anexo4ProtocoloUsoDrogas.pdf' %}">Protocolo Uso de drogas</a>
+        <a href="{% static 'documentoscolegio/Anexo7ProtocoloMaltratoAcosoViolencia.pdf' %}">Protocolo Maltrato, Acoso o Violencia escolar</a>
+        <a href="{% static 'documentoscolegio/Anexo8ViolenciaLaboral.pdf' %}">Protocolo Violencia Laboral</a>
+        <h2>Informativos</h2>
+        <a href="{% static 'documentoscolegio/Acta1ConsejoEscolar2022.pdf' %}" download="Acta 1 Consejoescolar.pdf">CUENTA PUBLICA 2021: ACTA</a>
+        <a href="{% static 'documentoscolegio/Acta1ConsejoEscolar2022.pdf' %}" download="Acta 1 Consejoescolar.pdf">CUENTA PUBLICA 2021: ACTA</a>
+        <a href="{% static 'documentoscolegio/Acta1ConsejoEscolar2022.pdf' %}" download="Acta 1 Consejoescolar.pdf">CUENTA PUBLICA 2021: ACTA</a>
+        <h2>Reconocimiento Oficial</h2>
+        <a href="{% static 'documentoscolegio/ResEx939.pdf' %}" >Resolución Exenta 939 27/8/2018</a>
+        <a href="{% static 'documentoscolegio/ResEx4117.pdf' %}">Resolución Exenta 4117 13/12/2006</a>
+        <a href="{% static 'documentoscolegio/ResEx3998.pdf' %}">Rectifica resolución exenta 1114 del 2005</a>
+        <a href="{% static 'documentoscolegio/ResEx4307.pdf' %}">Resolución exenta 4307 19/12/1989</a>
+        <a href="{% static 'documentoscolegio/ResEx848.pdf' %}">Resolución exenta 848 11/08/1986</a>
+        <h2>Presencialidad 2022</h2>
+        <a href="{% static 'documentoscolegio/3MedidasCasosConfirmadosLEC.pdf' %}">PROTOCOLO POSIBLES CASOS COVID 2021-2022</a>
+        <a href="{% static 'documentoscolegio/5MedidasSanitariasLEC.pdf' %}">PROTOCOLO DE SANITIZACION 2021-2022</a>
+        <a href="{% static 'documentoscolegio/4MedidasLimpiezaLEC.pdf' %}">PROTOCOLO DE LIMPIEZA 2021-2022</a>
+    </div>
+
+</body>
+
+
+</html>

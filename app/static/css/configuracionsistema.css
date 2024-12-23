@@ -1,0 +1,174 @@
+#DivGeneral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Division button {
+  background-color: #34495e;
+  border-radius: 5px;
+  border: #00ffcc solid 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #00ffcc;
+  font-weight: bold;
+  height: 5vh;
+  transition: all 0.2s;
+}
+#Division button:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+#cerrar {
+  background-color: red;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.Pickeado {
+  background-color: #00c59e;
+}
+
+#mensaje {
+  display: flex !important;
+  justify-content: center !important;
+  font-size: larger;
+}
+
+#CalendarioDinamico {
+  position: absolute;
+  top: 1000px;
+  left: 12vw;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#CalendarioDinamico div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #34495e;
+  border: #00ffcc 1px solid;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: 0;
+  color: #04ebbd;
+  width: 50vw;
+  height: 5vh;
+}
+#CalendarioDinamico div img {
+  cursor: pointer;
+  height: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#CalendarioDinamico div img:first-child {
+  transform: rotate(180deg);
+}
+#CalendarioDinamico div img:hover {
+  filter: brightness(1.2);
+}
+#CalendarioDinamico #Cerrar {
+  height: 5%;
+  width: 20vw;
+  left: 40vw;
+  background-color: red;
+  border-bottom: 0;
+  color: white;
+  font-weight: bold;
+  font-size: large;
+}
+#CalendarioDinamico table {
+  width: 100%;
+  height: 95%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 10px;
+  background-color: grey;
+}
+#CalendarioDinamico table tr:first-child {
+  border: #00ffcc 1px solid;
+}
+#CalendarioDinamico table th {
+  max-height: 5vh;
+  height: 5vh;
+  background-color: #34495e;
+  color: #00ffcc;
+}
+#CalendarioDinamico table td {
+  background-color: white;
+  border: solid 1px black;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+#CalendarioDinamico table td p {
+  font-size: x-large;
+  font-weight: bold;
+}
+#CalendarioDinamico table td:hover {
+  background-color: #00c59e;
+}
+#CalendarioDinamico .Feriado {
+  background-color: red;
+  color: white;
+  cursor: default;
+}
+#CalendarioDinamico .Feriado:hover {
+  background-color: red;
+}
+#CalendarioDinamico .Laboral {
+  background-color: blue;
+  color: white;
+}
+#CalendarioDinamico .No {
+  background-color: grey;
+  cursor: default;
+}
+#CalendarioDinamico .No:hover {
+  background-color: grey;
+}
+@media only screen and (max-width: 768px) {
+  #CalendarioDinamico {
+    left: 2.5vw;
+    width: 95vw;
+  }
+  #CalendarioDinamico div {
+    width: 95vw;
+  }
+}
+
+.AbrirCalendario {
+  animation-name: AnimSubirCalendario;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirCalendario {
+  0% {
+    top: -1000px;
+  }
+  100% {
+    top: 8vh;
+  }
+}
+.CerrarCalendario {
+  animation-name: AnimCerrarCalendario;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarCalendario {
+  0% {
+    top: 8vh;
+  }
+  100% {
+    top: -1000px;
+  }
+}/*# sourceMappingURL=configuracionsistema.css.map */

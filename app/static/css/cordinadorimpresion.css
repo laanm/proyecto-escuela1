@@ -1,0 +1,262 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+#divCordinador {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Buscador {
+  display: flex;
+  align-items: center;
+}
+#Buscador * {
+  margin-left: 3px;
+}
+@media only screen and (max-width: 920px) {
+  #Buscador {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.OverFlow {
+  width: 95vw;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 768px) {
+  .OverFlow {
+    width: 100vw;
+    padding-left: 0;
+  }
+}
+
+#Listado {
+  border-collapse: collapse;
+  width: 100%;
+}
+#Listado tr:nth-child(odd) {
+  background-color: rgba(80, 80, 80, 0.1843137255);
+}
+#Listado tr {
+  transition: 0.5s;
+}
+#Listado tr th {
+  background-color: #34495e;
+  color: white;
+  padding: 10px;
+}
+#Listado tr td {
+  text-align: center;
+  padding: 10px;
+}
+#Listado tr:hover {
+  background-color: gray;
+}
+
+#DivBuscador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#DivBuscador a {
+  margin-left: -20%;
+}
+@media only screen and (max-width: 768px) {
+  #DivBuscador {
+    width: 100%;
+  }
+  #DivBuscador a {
+    margin-left: 0;
+  }
+}
+
+#CrearPeticion {
+  width: 130px;
+  height: 45px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+#CrearPeticion:hover {
+  background-color: #1abc9c;
+}
+
+#CrearPeticion2 {
+  width: 100px;
+  height: 30px;
+  background-color: #34495e;
+  color: white;
+  border: 1px solid #1abc9c;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+#CrearPeticion2:hover {
+  background-color: #1abc9c;
+}
+
+#Aprobar {
+  width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #00ff9d;
+  color: black;
+  border: 2px solid #003a2e;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+#Aprobar:hover {
+  transform: scale(1.1);
+}
+
+#Rechazar {
+  width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #ad0000;
+  color: white;
+  border: 2px solid #34495e;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-bottom: 5px;
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+#Rechazar:hover {
+  transform: scale(1.1);
+}
+
+#Impreso {
+  width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgb(234, 3, 255);
+  color: black;
+  border: 2px solid #003a2e;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  transition: all 0.5s;
+}
+#Impreso:hover {
+  transform: scale(1.1);
+}
+
+.PeticionRechazada {
+  background-color: rgb(255, 85, 85);
+}
+
+#Cargando {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.692);
+}
+#Cargando label {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.preloader {
+  width: 70px;
+  height: 70px;
+  border: 10px solid #eee;
+  border-top: 10px solid #1abc9c;
+  border-radius: 50%;
+  animation-name: girar;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes girar {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#Ventana {
+  height: 1000px;
+  width: 40vw;
+  position: fixed;
+  left: 30vw;
+  top: 5000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px;
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana input, #Ventana select {
+  margin-bottom: 5px;
+}
+#Ventana textarea {
+  height: 100px;
+  width: 100%;
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 100px;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 100px;
+  }
+  100% {
+    top: 2000px;
+  }
+}/*# sourceMappingURL=cordinadorimpresion.css.map */

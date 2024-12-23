@@ -1,0 +1,63 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+  background-color: #cecece;
+}
+
+@media only screen and (max-width: 768px) {
+  .BarraSuperior {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 0 !important;
+  }
+  .BarraSuperior h4 {
+    display: none;
+  }
+}
+
+#Principal {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+#Principal table {
+  border-collapse: collapse;
+  width: 95%;
+  border-radius: 10px;
+}
+#Principal table tr th {
+  background-color: #005895;
+  color: white;
+}
+#Principal table tr td {
+  background-color: white;
+  text-align: center;
+}
+
+#Contenido {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Contenido * {
+  margin-bottom: 10px;
+}
+#Contenido table {
+  border-collapse: collapse;
+  width: 80%;
+}
+#Contenido table tr th {
+  background-color: #005895;
+  color: white;
+  text-align: center;
+}
+#Contenido table tr td {
+  text-align: center;
+}/*# sourceMappingURL=junaeb.css.map */

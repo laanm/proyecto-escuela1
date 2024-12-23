@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/miasistencia.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/miasistencia/miasistencia.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="BarraSuperior">
+        <h4>Mi Asistencia</h4>
+        <button style="margin-left: 15vw;" class="BotonNormal" onclick="miasistencia.cargarmodoadmin()">Modo Admin</button>
+        
+    </div>
+    
+    <div id="Principal">
+        
+        <h2>Mes<select id="CalendarioMes" onchange="miasistencia.obtenerasistencias()">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select></h2>
+        <div id="InforHorario">
+
+        </div>
+        <div id="InforHorarioSemanal">
+
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div style="width: 20px;text-align: center; height: 20px;background-color: rgb(255, 153, 0);">A</div>
+            Atrasado
+            <div style="width: 20px;text-align: center; height: 20px;background-color: rgb(255, 153, 0);">!</div>
+            Salida no encontrada
+            <div style="width: 20px;text-align: center; height: 20px;background-color: rgb(255, 153, 0);">S</div>
+            Salida atrasada
+        </div>
+        <table id="Tabla">
+            <tr>
+                <th></th>
+            </tr>
+        </table>
+       
+        <div id="Informacion" style="display: none;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <div style="width: 15px; height: 15px;background-color: rgb(0, 255, 242);">&nbsp;</div>
+                Anticipado
+                <div style="width: 15px; height: 15px;background-color: rgb(0, 128, 0);">&nbsp;</div>
+                Dentro del horario
+                <div style="width: 15px; height: 15px;background-color: rgb(255, 123, 0);">&nbsp;</div>
+                Fuera del horario
+            </div>
+            <div id="BarraTotal">
+                <table>
+                    <tr>
+                        <th>7:00</th>
+                        <th>8:00</th>
+                        <th>9:00</th>
+                        <th>10:00</th>
+                        <th>11:00</th>
+                        <th>12:00</th>
+                        <th>13:00</th>
+                        <th>14:00</th>
+                        <th>15:00</th>
+                        <th>16:00</th>
+                        <th>17:00</th>
+                        <th>18:00</th>
+                        <th>19:00</th>
+                        <th>20:00</th>
+                    </tr>
+                </table>
+                <div id="BarraHorario">
+                    
+                </div>
+                <div id="BarraAnterior"></div>
+                <div id="BarraActual"></div>
+                <div id="BarraSiguiente"></div>
+                
+            </div>
+
+            <div id="InfoEscrita">
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="Ventana">
+        
+    </div>
+    <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+
+</body>
+<script>
+const miasistencia= new javamiasistencia("{{request.session.usuario.id}}","{{request.session.usuario.userPerfil}}") 
+
+//https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+
+
+</script>
+</html>

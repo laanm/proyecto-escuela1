@@ -1,0 +1,78 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/temasfront.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/administracion/temasfront.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+        
+        <div id="DivGeneral">
+            <div id="DivOpinion">
+            <button class="CrearPeticion" onclick="temasfront.crearventana(1)" disabled>Crear Opinion</button>
+                <table id="TablaOpinion">
+                    <tr>
+                        <th>Profesor</th>
+                        <th>Tema</th>
+                        <th>Opinion</th>
+                        <th>Accion</th>
+                    </tr>
+                    <tr>
+                        <td>David</td>
+                        <td>Constitucion</td>
+                        <td>La verdad no c</td>
+                        <td><button>Eliminar</button><button>Editar</button></td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div id="DivTema">
+                <button class="CrearPeticion" onclick="temasfront.crearventana(0)" disabled>Crear Tema</button>
+
+                <table id="TablaTema">
+                    <tr>
+                        <th>Tema</th>
+                        <th>Activo</th>
+                        <th>Accion</th>
+                    </tr>
+                    <tr>
+                        <td>La conti</td>
+                        <td><input type="checkbox"></td>
+                        <td><button>Eliminar</button><button>Editar</button></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        
+        
+        
+        <div id="Ventana">
+            
+        </div>
+        <div id="Cargando"><div class="preloader"></div></div>
+    <script>
+
+        const temasfront= new javatemasfront("{{request.session.usuario.id}}")
+        
+
+    </script>
+</body>
+</html>

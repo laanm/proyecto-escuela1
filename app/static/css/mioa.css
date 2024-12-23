@@ -1,0 +1,193 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+}
+
+#Asignaturas {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Asignaturas {
+  width: 10vw;
+  background-color: aqua;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.507);
+  -webkit-box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.514);
+}
+.Asignaturas:hover {
+  background-color: rgb(110, 255, 255);
+}
+
+#Ventana {
+  position: fixed;
+  width: 80vw;
+  height: 100vh;
+  left: 10vw;
+  top: 5000px;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  /* From https://css.glass */
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgb(0, 0, 0);
+}
+#Ventana #Contenido {
+  overflow-y: scroll;
+  width: 95%;
+  padding-right: 10px;
+  padding-bottom: 100px;
+}
+#Ventana h2 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+#Ventana #parte1 {
+  background-color: rgb(0, 207, 207);
+  border: 2px solid rgb(0, 207, 207);
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: black;
+  display: flex;
+  border-radius: 5px;
+}
+#Ventana #parte2 {
+  border: 2px solid rgb(0, 233, 0);
+  background-color: rgb(223, 223, 223);
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+#Ventana #parte3 {
+  border: 2px solid rgb(255, 0, 221);
+  background-color: rgb(223, 223, 223);
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+#Ventana #parte4 {
+  border: 2px solid rgb(0, 26, 255);
+  background-color: rgb(223, 223, 223);
+  width: 100%;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+#Ventana button {
+  margin-top: 10px;
+}
+#Ventana table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#Ventana table th {
+  color: white;
+  text-align: center;
+  background-color: #34495e;
+}
+#Ventana table td {
+  text-align: center;
+  min-height: 50px;
+  height: 100px;
+}
+#Ventana table td textarea {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #Ventana {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 5vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 5vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+.tox-tinymce {
+  width: 95% !important;
+}
+
+.Seleccionado {
+  background-color: aqua;
+}/*# sourceMappingURL=mioa.css.map */

@@ -1,0 +1,99 @@
+#divSeleccionarProfe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #34495e;
+  border-bottom: 2px solid #34495e;
+  padding: 10px;
+  color: #00ffcc;
+  font-size: 20px;
+  font-weight: bold;
+}
+#divSeleccionarProfe select {
+  margin-left: 10px;
+  width: 200px;
+  text-align: center;
+}
+
+#SeleccionarAsignatura {
+  background-color: #34495e;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #00ffcc;
+}
+#SeleccionarAsignatura select {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#divAsignaturas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 70vh;
+  border-collapse: collapse;
+}
+table tr {
+  transition: 0.5s;
+}
+table tr th {
+  background-color: #34495e;
+  padding: 10px;
+  color: #00ffcc;
+}
+table tr th:first-child {
+  border-top-left-radius: 10px;
+}
+table tr th:last-child {
+  border-top-right-radius: 10px;
+}
+table tr td {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+}
+table tr:nth-child(even) {
+  background-color: rgb(227, 240, 255);
+}
+table tr:hover {
+  background-color: gray;
+}
+
+#CrearPeticion {
+  padding: 5px 20px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+#CrearPeticion:hover {
+  background-color: #1abc9c;
+}
+
+#Eliminar {
+  padding: 5px 20px;
+  background-color: #000000;
+  color: white;
+  border: 2px solid rgb(255, 8, 0);
+  font-size: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+#Eliminar:hover {
+  background-color: #ff0000;
+}/*# sourceMappingURL=asignarasignaturasprofe.css.map */

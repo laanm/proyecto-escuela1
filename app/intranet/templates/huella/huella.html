@@ -1,0 +1,90 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="{% static 'css/huella.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/huella/huella.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+        
+    <div id="DivGeneral">
+        
+        <div id="DivGeneral2">
+            <div id="Filtros">
+                <div id="FiltroCursos"></div>
+                
+                
+                <p>Curso: </p>
+                <select id="Curso" onchange="huella.mostrardatos(1)">
+                    <option>Todos</option>
+                    <option>curso x</option>
+                </select>
+                <select id="CalendarioMes" onchange="huella.mostrardatos(1)">
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Mayo</option>
+                    <option value="6">Junio</option>
+                    <option value="7">Julio</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Septiembre</option>
+                    <option value="10">Octubre</option>
+                    <option value="11">Noviembre</option>
+                    <option value="12">Diciembre</option>
+                </select>
+                <button onclick="huella.generarinformeexcel()" >Crear informe</button>
+                <label>Ver horas <input id="VerHoras" type="checkbox" onchange="huella.mostrardatos(999)"></label>
+                
+                
+                
+            </div>
+
+            <div id="MalditoDiv">
+                <table id="TablaInfo">
+
+                </table>
+                <table id="TablaAsist">
+
+                </table>
+            </div>
+
+            <div id="Paginas">
+
+            </div>
+
+        </div>
+        
+    </div>
+        
+        
+        <div id="Menu"><h2 id="Contador">Accion</h2><button >Citar Apoderado</button><button onclick="huella.ponerpresente()">Presente</button><button onclick="huella.poneratrasado()">Atrasado</button><input id="MenuTiempo" type="time" min="08:00" max="20:00" value="09:00"><button onclick="huella.deseleccionar()">Deseleccionar</button></div>
+        <div id="Ventana">
+            
+        </div>
+        <div id="Cargando"><div class="preloader"></div></div>
+    <script>
+
+        const huella= new javahuella("{{request.session.usuario.id}}")
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+    @media only screen and (max-width: 768px) {
+        
+        .BarraSuperior{
+            h4{
+                display: none;
+            }
+            padding-left: 0 !important;
+            label{
+                font-size: 12px;
+            }
+            button{
+                font-size: 10px !important;
+            }
+            
+        }
+        
+        
+    }
+}
+#Menu2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10vw;
+    button,label,input,select{
+        margin-right: 10px;
+    }
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+        
+    }
+   
+}
+#Calendario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    table{
+        border: 1px solid black;
+        width: 80%;
+        height: 80%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: rgba(128, 128, 128, 0.295);
+        th{
+            background-color: white;
+            border-bottom: 1px solid black;
+        }
+        td:hover{
+            background-color: aqua;
+            
+        }
+        td{
+            text-align: center;
+            font-size: xx-large;
+            min-height: 20%;
+            height: 20%;
+            font-weight: bold;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        tr{
+            white-space: nowrap;
+        }
+        @media only screen and (max-width: 768px) {
+            width: 95%;
+            th{
+                font-size: 12px;
+            }
+            td{
+                font-size: x-large;
+            }
+            
+        }
+    }
+}
+#BCrear{
+
+}
+#Menu{
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    .fa-2xl{
+        line-height: 40px !important;
+        transition: 0.2s;
+        padding-right: 10px;
+        padding-left: 10px;
+        &:hover{
+            font-size: 2.5em;
+        }
+    }
+}
+.Laboral{
+    background-color: rgb(0, 140, 255);
+}
+.Feriado{
+    background-color: red;
+    color: white;
+}
+.No{
+    border: 0 !important;
+    &:hover{
+        background-color: gray !important;
+    }
+}
+
+.flecha1{
+    
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    &:hover{
+        
+        transform: scale(1.1) rotate(180deg);
+        filter: brightness(1.2);
+    }
+}
+.flecha2{
+    width: 50px;
+    height: 50px;
+    margin-top: 2px;
+    padding-bottom: 2px;
+    &:hover{
+        
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:10vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:10vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+.Seleccionardias{
+    
+    animation-name: selecdias;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    #Menu2{
+        label,h4{
+            color: black;
+        }
+    }
+}
+@keyframes selecdias{
+    0%{
+        background-color: rgb(181, 255, 212);
+    }50%{
+            background-color: #04ebbd;
+    }100%{
+        //width: fit-content;
+        background-color: rgb(181, 255, 212);
+    }
+}
+
+#Contenido{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    textarea{
+        height: 100px;
+        resize: none;
+        align-content: center;
+        text-align: left;
+    }
+
+    input[type="text"]{
+        width: 60%;
+    }
+    h2,h3{
+        margin-top: 10px;
+        text-align: center;
+    }
+    label{
+        text-align: center;
+    }
+    select,textarea{
+        text-align: center;
+        width: 60%;
+        margin-bottom: 5px;
+    }
+    .BotonNormal{
+        margin-top: 5px;
+    }
+    
+    .Item{
+        width: 90%;
+        border: 1px solid black;
+        border-radius: 10px;
+        .Info{
+            width: 100%;
+            display: flex;
+            h4{
+                background-color: #005895;
+                color: white;
+                text-align: center;
+                width: 20%;
+            }
+        }
+        .InfoDoble{
+            width: 100%;
+            display: flex;
+            h4{
+                background-color: #005895;
+                color: white;
+                text-align: center;
+                width: 20%;
+            }
+            label{
+                width: 30%;
+                text-align: center;
+            }
+        }
+        .Des{
+            background-color: #e5f7ff;
+            height: 15vh;
+            
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    }
+    
+}
+
+
+
+.TituloEvento{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0, 199, 33);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.Seleccionados{
+    
+    animation-name: Seleccionados;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes Seleccionados{
+    0%{
+        background-color: green;
+    }
+    50%{
+        background-color: rgb(0, 238, 0);
+    }
+    100%{
+        background-color: green;
+    }
+}
+
+.fa-2x1{
+    line-height: 0 !important;
+}
+
+#Ventana{
+
+    @media only screen and (max-width: 768px) {
+        width: 95vw !important;
+        left: 2.5vw !important;
+
+        
+    }
+}

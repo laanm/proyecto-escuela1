@@ -1,0 +1,726 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+    
+}
+
+body{
+    background-color:  #cecece;
+}
+
+#Ventana{
+    position:fixed;
+    width: 50%;
+    height: 90vh;
+    left:50vh;
+    top: 5000px;
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    
+    div{
+        width: 95%;
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        p{
+            label{
+                display: inline-block;
+                width: 100px;
+                text-align: center;
+                font-weight: bold;
+            }
+            
+            span{
+                select{
+                    width: 150px;
+                }
+                
+            }
+        }
+        
+        
+        
+        
+        
+    }
+    
+    button{
+        margin-top: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 4.5vw !important;
+    
+    }
+}
+
+
+
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:15vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:15vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+
+
+#diaActual{
+    
+    height: 8vh;
+    max-height: 8vh;
+    background-color: #006FBB; 
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    color: white;
+    h1{
+        animation-name: AnimDiaActual;
+        animation-duration: 7s;
+        animation-iteration-count: infinite;
+               
+    }
+    @media only screen and (max-width: 768px) {
+        
+        width: 100%;
+        overflow: auto;
+    
+    }
+    
+
+}
+
+@keyframes AnimDiaActual{
+    0%{
+        color: white;
+        
+    }
+    50%{
+        color: rgb(219, 219, 219);
+        
+    }
+    100%{
+        color: white;
+        
+    }
+}
+
+
+.divPrincipal{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    
+    
+    
+    
+}
+
+.calendario{
+    flex-grow: 1;
+    
+    border: 1px solid #296d74;
+    
+    table{
+        width: 100%;
+
+        border-spacing: 0;
+        border-collapse: collapse;
+        
+        
+        tr{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            
+            th{
+                min-width: 50px;
+                width: 100px;
+                flex-grow: 1;
+                font-size: 20px;
+                text-align: center;
+                background-color: #005795;
+                color:white;
+                border-right: 1px solid #296d74;
+
+
+            }
+            td{
+
+                height: 100px;
+                width: 100px;
+                min-width: 50px;
+                flex-grow: 1;
+                transition: 0.3s;
+                display: flex;
+                align-items: center;
+                justify-items: center;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            td:hover{
+                background-color: #04ebbd;
+            }
+
+        }
+        tr:nth-child(odd){
+            background-color: white;
+            
+        }
+        tr:nth-child(even){
+            background-color: #d8ecee;
+            
+        }
+        th:first-child{
+            flex-grow: 0;
+            width: 50px;
+            pointer-events: none;
+            background-color: #005895;
+        }
+        td:first-child{
+            flex-grow: 0;
+            width: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #005895;
+            pointer-events: none;
+            color: white
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+        
+       
+        overflow: auto;
+    
+    }
+}
+
+.calendarioSecundario{
+    padding: 15px;
+    background-color: #34495e;
+    border: 1px solid #04ebbd3a;
+    @media only screen and (max-width: 768px) {
+        
+        display: none;
+    
+    }
+
+}
+
+.NoPedida{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+        text-decoration: none;
+        color: black;
+       
+        
+        
+        
+    
+
+}
+
+.DivOcupado{
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(17, 0, 255);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    color: white;
+    animation-name: AnimOcupado;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    transition-duration: 0.5s;
+    border-radius: 5px;
+    h3{
+        text-align: center;
+    }
+    p{
+        font-weight: bold;
+        text-align: center;
+        font-size: 12px;
+    }
+    .OA{
+        display: none;
+    }
+    &:hover{
+        position: relative;
+        z-index: 99;
+        width: 125%;
+        height: 160%;
+        box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        .OA{
+            display: block;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        
+        p{
+            display: none;
+            
+        }
+        
+    }
+
+}
+
+
+.DivPropio{
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(97, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    animation-name: AnimPropio;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    transition: 0.5s;
+    border-radius: 5px;
+    h3{
+        text-align: center;
+    }
+    p{
+        font-weight: bold;
+        text-align: center;
+        font-size: 14px;
+    }
+    .Ayuda{
+        display: none;
+    }
+    .OA{
+        display: none;
+    }
+    &:hover{
+        position: relative;
+        z-index: 99;
+        box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        -webkit-box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: -1px 5px 27px 0px rgba(0,0,0,0.75);
+        
+        .Ayuda{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .Descripcion{
+                font-size: small;
+            }
+        }
+        h3,p{
+            display: none;
+        }
+    }
+}
+
+@keyframes AnimPropio{
+    0%{
+        background-color: rgb(97, 0, 0);
+    }
+    50%{
+        background-color: rgb(165, 0, 0);
+    }
+    100%{
+        background-color: rgb(97, 0, 0);
+    }
+    
+}
+.Ocupado{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    
+}
+
+.coso{
+
+    :nth-child(2){
+        //display: none;
+    }
+
+
+}
+
+.Asignatura{
+    font-size: 15px;
+}
+
+#derecha{
+
+    padding-right: 2vw;
+    transition: 0.3s;
+    &:hover{
+        transform: scale(1.1);
+        filter: brightness(1.5);
+    }
+}
+#izquierda{
+
+    
+    
+    padding-left: 2vw;
+    transition: 0.3s;
+    &:hover{
+        transform: scale(1.1) ;
+        filter: brightness(1.5);
+    }
+    
+}
+
+#CrearPeticion{
+    margin-top: 10px;
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1999;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #diaSiguiente{
+    margin-right: 5vw;
+    @media only screen and (max-width: 768px) {
+        
+       
+        display: none;
+    
+    }
+  }
+  #diaPasado{
+    margin-left: 5vw;
+    @media only screen and (max-width: 768px) {
+        
+       
+        display: none;
+    
+    }
+  }
+
+ #CalendarioDinamico{
+    position: absolute;
+    top: 1000px;
+    left: 12vw;
+    width: 80vw;
+    height: 80vh;
+    
+    z-index: 3000;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color:#005895;
+        border: black 1px solid;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom: 0;
+        color: white;
+        width: 50vw;
+        height: 5vh;
+        img{
+           cursor: pointer;
+            height: 100%;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        img:first-child{
+            transform: rotate(180deg);
+        }
+        img:hover{
+            filter: brightness(1.2);
+        }
+        
+    }
+    #Cerrar{
+        height: 5%;
+        width: 20vw;
+        left: 40vw;
+        background-color: red;
+        border-bottom: 0;
+        color: white;
+        font-weight: bold;
+        font-size: large;
+    }
+    table{
+        width: 100%;
+        height: 95%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        
+        border-radius: 10px;
+        background-color: grey;
+        tr:first-child{
+            border: black 1px solid;
+        }
+        th{
+            
+            max-height: 5vh;
+            height: 5vh;
+            background-color:#005895;
+            color: white;
+            
+        }
+        
+        
+        td{
+            
+            background-color: white;
+            border: solid 1px black;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+
+            p{
+                font-size: x-large;
+                font-weight: bold;
+            }
+
+            &:hover{
+                background-color: #53AF09;
+            }
+        }
+    }
+    .Feriado{
+        background-color: red;
+        color: white;
+        cursor: default;
+        &:hover{
+            background-color: rgb(255, 72, 72);
+        }
+    }
+    .Laboral{
+        background-color: #59a4ff;
+        color: white;
+    }
+    .No{
+        background-color: grey;
+        cursor: default;
+        &:hover{
+            background-color: grey;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        left: 2.5vw;
+        width: 95vw;
+        div{
+            width: 95vw;
+        }
+    
+    }
+ }
+ .AbrirCalendario{
+    animation-name: AnimSubirCalendario;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+@keyframes AnimSubirCalendario{
+    0%{
+        top:-1000px;
+    }
+    100%{
+        top:8vh;
+        
+    }
+
+    
+    
+}
+.CerrarCalendario{
+    
+    animation-name: AnimCerrarCalendario;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+}
+@keyframes AnimCerrarCalendario{
+    0%{
+        top:8vh;
+        
+    }
+    100%{
+        top:-1000px;
+    }
+}
+
+.Hoy{
+    animation-name: HoyAnim;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+
+@keyframes HoyAnim{
+    0%{
+        background-color: #53AF09;
+    }
+    50%{
+        background-color: #69d80d;
+    }
+    100%{
+        background-color: #53AF09;
+    }
+}
+
+.BotonCalendario{
+    border:#00c59e 1px solid;
+    border-radius: 5px;
+}
+#diaGrande{
+    cursor: pointer;
+    
+    border:white 1px solid;
+    border-radius: 5px;
+}
+
+.Seleccionado{
+    background-color: #005895 !important;
+}
+
+.BotonSmall{
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 10px !important;
+}
+
+#Cerrar{
+    left: 0 !important;
+}
+#Ventana{
+    @media only screen and (min-width: 768px) {
+        left: 35vw !important;
+        width: 30vw !important;
+     
+     }
+    
+}

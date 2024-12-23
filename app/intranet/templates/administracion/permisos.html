@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/permisos.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/administracion/permisos.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="BarraSuperior">
+        <h4>Permisos Perfiles</h4>
+        <button style="margin-left: 10vw;" class="BotonNormal" onclick="permisos.crearventana()">Crear Perfil de permisos</button>
+    </div>
+    
+    <div id="Tablin">
+
+
+    </div>
+
+    <div id="Ventana">
+
+
+    </div>
+    <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+
+    <script>
+
+        const permisos= new javapermisos();
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/configuracionsistema.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/configuracionsistema.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="BarraSuperior">
+        <h4>Configuracion del sistema</h4>
+
+    </div>
+    <div id="DivGeneral">
+        <h2>Configuracion del sistema</h2>
+        <p>Tipo de año 
+            <select id="TipoYear" onchange="configuracion.cambiardivision()">
+            <option>Seleccionatipo</option>
+            <option>Semestre</option>
+            <option>Trimestre</option>
+            <option>Cuatrimestre</option>
+        </select></p>
+
+        <h2>Division del año <button onclick="configuracion.aplicarferiadosnuevos()">Actualizar feriados</button></h2>
+        <div id="Division">
+
+        </div>
+        
+        
+    </div>
+        <div id="Ventana">
+            
+        </div>
+        <div id="CalendarioDinamico">
+            
+        </div>
+        <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+        const configuracion= new javaconfiguracionsistema("{{request.session.usuario.id}}","{{request.session.usuario.userPerfil}}") 
+
+       //https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+        
+
+    </script>
+</body>
+</html>

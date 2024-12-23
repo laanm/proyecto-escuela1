@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="/static/css/nav.css">
+
+<div id="Brutal">
+ <div class="nav">
+
+    <div id="Sesion">
+        <i class="fa-solid fa-user" style="color: white;"></i>
+
+            
+            {% if nombreperfil == None %}
+                <label>Sin permisos</label>
+            {% else%}
+                <label id="PerfilNav">{{nombreperfil}}</label>
+            {% endif %}
+            <label id="NombreNav">{{request.session.usuario.nombres}} {{request.session.usuario.apellidos}}</label>
+        
+        
+        
+    </div>
+    <div class="OverFlowNav">
+    <ul>
+        
+        {% if pnoticias == 1 %}
+        <a href="{% url 'pagNoticias' %}">
+
+            <i class="fa-solid fa-newspaper"></i>
+            <li>
+                Noticias LEC
+            </li>
+        </a>
+        {% endif %}
+
+        {% if preservasalas == 1 %}
+        <a href="{% url 'RenderPedirSalas' %}">
+            <i class="fa-regular fa-calendar"></i>
+            <li>
+                Reserva Salas
+            </li>
+        </a>
+        {% endif %}
+
+        {% if pimpresiones >= 1 %}
+        <a href="{% url 'RenderAdminImpresion' %}">
+            <i class="fa-solid fa-print"></i>
+            <li>
+                Impresión
+            </li>
+        </a>
+        {% endif %}
+
+        {% if pcra >= 1 %}
+        <a href="{% url 'RenderCra' %}">
+            <i class="fa-solid fa-book"></i>
+            <li>
+                CRA
+            </li>
+        </a>
+        {% endif %}
+
+        {% if pcalificaciones == 1 %}
+        <a href="{% url 'RenderMisCursos' %}">
+            <i class="fa-sharp fa-solid fa-notes-medical"></i>
+            <li>
+                Calificaciones
+            </li>
+        </a>
+        {% endif %}
+
+        
+        <a href="{% url 'RenderMiAsistencia' %}">
+            <i class="fa-sharp fa-solid fa-notes-medical"></i>
+            <li>
+                Mi Horario
+            </li>
+        </a>
+        
+
+        {% if pasistencias == 1 %}
+            <a href="{% url 'RenderHuella' %}">
+                <i class="fa-regular fa-square-check"></i>
+                <li>
+                    Sistema Asistencia
+                </li>
+            </a>
+        {%endif%}
+
+        
+
+        {% if pmatricula == 1 %}
+        <a href="{% url 'RenderCrearMatriculas' %}">
+            <i class="fa-solid fa-stamp"></i>
+            <li>
+                Matriculas
+            </li>
+        </a>
+        {%endif%}
+
+
+        {% if pcalendario >= 1 %}
+        <a href="{% url 'RenderOrganigrama' %}">
+            <i class="fa-solid fa-calendar"></i>
+            <li>
+                Calendario
+            </li>
+        </a>
+        {%endif%}
+
+
+        {% if pjunaeb == 1%}
+        <a href="{% url 'RenderJunaeb' %}">
+            <i class="fa-solid fa-mug-hot"></i>
+            <li>
+                Junaeb
+            </li>
+        </a>
+        {%endif%}
+
+        {% if request.session.usuario.userPerfil == 1%}
+        <a href="{% url 'RenderMantencion' %}">
+            <i class="fa-solid fa-gears"></i>
+            <li>
+                Mantención
+            </li>
+        </a>
+        {%endif%}
+        
+        {% if padmin == 1%}
+            <a href="{% url 'administracion' %}">
+            <i class="fa-solid fa-toolbox"></i>
+            <li>
+                Administracion
+            </li>
+            </a>
+        {%endif%}
+        
+        <a href="{% url 'login:logout' %}">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <li>Deslogear</li>
+        </a>
+            
+    </ul>
+    </div>
+</div>
+
+</div>
+
+<div id="BotonMenuMovil">
+    <button id="BBBB" onclick="alternar()">Menu</button>
+</div>
+
+<script type="text/javascript">
+
+    function alternar(){
+        if($("#Brutal").hasClass("abrirmenumovilxd")){
+            $("#Brutal").removeClass("abrirmenumovilxd").addClass("cerrarmenumovilxd")
+            $("#BBBB").html("Menu").css({"background-color":"#006FBB","color":"white"})
+            $("#Cargando").hide()
+            $(".preloader").show()
+        }else{
+            $("#Brutal").removeClass("cerrarmenumovilxd").addClass("abrirmenumovilxd")
+            $("#BBBB").html("Cerrar").css({"background-color":"red","color":"white"})
+            $("#Cargando").show()
+            $(".preloader").hide()
+        }
+    }
+    globalThis.TOKEN="{{ csrf_token }}"
+    
+</script>
+
+
+

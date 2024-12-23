@@ -1,0 +1,88 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/equipos.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/biblioteca/equipos.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    
+    <div class="BarraSuperior">
+        <label>Equipos</label>
+        <div id="DivBotones">
+            <a href="{% url 'RenderMisEquiposCra' %}"><button class="BotonNormal">Mis Pedidos</button></a>
+            {% if pcra == 2 %}
+            <a href="{% url 'RenderAdminPedidosCra' %}"><button class="BotonNormal">Ver Pedidos</button></a>
+            <a href="{% url 'RenderAdminEquiposCra' %}"><button class="BotonNormal">Crear Equipos</button></a>
+            {%endif%}
+        </div>
+    </div>
+    <div id="DivGeneral">
+        
+        <div id="DivBuscador">
+            <label>Buscador: </label>
+            <input id="Buscador" type="text">
+            <select id="SelectBuscador">
+                <option value="1">Nombre</option>
+                
+                <option value="2">Codigo de barra</option>
+            </select>
+        </div>
+        <h1>Categorias</h1>
+        <div class="OverFlow">
+            <div id="Categorias">
+                <button class="BotonesCategoria">Notebooks</button>
+                <button class="BotonesCategoria">parlantes</button>
+                <button class="BotonesCategoria">cables</button>
+            </div>
+        </div>
+        
+
+            
+
+        <div id="Equipos">
+            
+
+            <div class="Item-Equipos">
+                <label>Notebook basico n2</label>
+                <div class="Imagen" style="background-image: url('https://www.pcfactory.cl/public/foto/41356/1_500.jpg?t=1659979603726')"></div>
+                
+                <label class="Disponible">Disponible</label>
+            </div>
+
+            
+
+        
+        
+    </div>
+        
+        
+        
+        <div id="Ventana">
+            
+        </div>
+        <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+        const equipos= new javaequipos("{{request.session.usuario.id}}") 
+
+       //https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+        
+
+    </script>
+</body>
+</html>

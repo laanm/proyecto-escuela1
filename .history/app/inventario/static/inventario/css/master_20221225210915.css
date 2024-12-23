@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url(/static/inventario/img/background.svg);
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+  margin: 0px;
+  font-size: 30px;
+  padding: 0px;
+  color: #0E2A47;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+header ul {
+  display: flex;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+  gap: 5px;
+  align-items: center;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0E2A47;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+header ul li a:hover {
+  background-color: #71BC78;
+}
+
+main {
+  width: 80%;
+  height: auto;
+  min-height: 300px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+main .filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: rgb(238, 240, 255);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+main .filtros div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+main .filtros div label {
+  font-size: 12px;
+  color: #0E2A47;
+}
+main .filtros div select, main .filtros div input {
+  border: 1px solid #1E3A57;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #0E2A47;
+}/*# sourceMappingURL=master_20221225210915.css.map */

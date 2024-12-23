@@ -1,0 +1,13 @@
+#DivGeneral {
+  width: 100%;
+}
+#DivGeneral #omg {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#DivGeneral #omg select {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=huellaprofesores.css.map */

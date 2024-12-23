@@ -1,0 +1,228 @@
+option {
+  text-align: center;
+}
+
+#xd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#xd table {
+  border-collapse: collapse;
+  width: 95%;
+}
+#xd table th {
+  background-color: rgb(0, 119, 255);
+  color: white;
+}
+#xd table tr:nth-child(even) {
+  background-color: rgb(220, 228, 255);
+}
+#xd table tr:hover {
+  background-color: rgb(154, 143, 255);
+}
+#xd table th:first-child {
+  border-top-left-radius: 5px;
+}
+#xd table th:last-child {
+  border-top-right-radius: 5px;
+}
+#xd table td {
+  text-align: center;
+  max-width: 30vw;
+  overflow: hidden;
+}
+#xd table td textarea {
+  resize: none;
+  min-width: 25vw;
+  height: 10vh;
+}
+@media only screen and (max-width: 768px) {
+  #xd {
+    overflow-x: scroll;
+    align-items: initial;
+    justify-items: normal;
+  }
+}
+
+#SelectSintomas {
+  background-color: grey;
+  border-radius: 10px;
+  width: 70%;
+  min-height: 5vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+#SelectSintomas button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.Seleccionado {
+  background-color: blue;
+}
+
+#ListaSintomas, #ListaMedicamentos {
+  background-color: rgb(192, 192, 192);
+  width: 80%;
+}
+#ListaSintomas div, #ListaMedicamentos div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: all 0.5s;
+}
+#ListaSintomas div label, #ListaMedicamentos div label {
+  color: black;
+}
+#ListaSintomas div button, #ListaMedicamentos div button {
+  margin-top: 0;
+  margin-left: 5px;
+}
+#ListaSintomas div:hover, #ListaMedicamentos div:hover {
+  background-color: white;
+}
+
+.BEliminar {
+  background-color: rgb(255, 43, 43);
+  color: white;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+#BotonAgregar {
+  margin: 5px 0px;
+  border: solid 1px rgb(0, 0, 0);
+  border-radius: 10px;
+  background-color: rgb(235, 233, 233);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
+#BotonAgregar:hover {
+  background-color: rgb(59, 151, 255);
+}
+
+#Contenido {
+  width: 100%;
+  height: 50%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#Contenido label {
+  text-align: center;
+}
+#Contenido input {
+  width: 70%;
+}
+#Contenido textarea {
+  width: 70%;
+  height: 100%;
+}
+
+#Ventana {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  left: 50vh;
+  top: 5000px;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* From https://css.glass */
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#Ventana img {
+  height: 80%;
+  width: 80%;
+}
+#Ventana button {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #Ventana {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 10vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 10vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+#Tablaa {
+  background-color: white;
+  border-collapse: collapse;
+  width: 80%;
+}
+#Tablaa th {
+  background-color: rgb(0, 119, 255);
+  color: white;
+}
+#Tablaa td {
+  color: black;
+  text-align: center;
+}/*# sourceMappingURL=enfermedades.css.map */

@@ -1,0 +1,107 @@
+#divCrearSalas{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    
+    
+    form{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        background-color: #34495e;
+        border: 2px solid #1abc9c;
+        border-radius: 10px;
+        padding: 10px;
+        label{
+            color:white;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        select{
+            width: 200px;
+            text-align: center;
+        }
+        input{
+            width: 200px;
+        }
+        input[type="number"]{
+            width: 40px;
+            margin-bottom: 20px;
+        }
+        div{
+            label{
+                color: white;
+            }
+        }
+        
+        
+
+    }
+
+
+}
+.CrearPeticion{
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    margin-bottom: 10px;
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+.invisible{
+    display: none;
+}
+
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

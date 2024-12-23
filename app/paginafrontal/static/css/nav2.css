@@ -1,0 +1,28 @@
+#Brutal {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  z-index: 100;
+  left: 0px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 11px 26px -3px rgba(0, 0, 0, 0.33);
+  -webkit-box-shadow: 3px 11px 26px -3px rgba(0, 0, 0, 0.33);
+  -moz-box-shadow: 3px 11px 26px -3px rgba(0, 0, 0, 0.33);
+}
+#Brutal h1 {
+  color: #5fcf80;
+  width: 30%;
+  padding-left: 5%;
+}
+#Brutal ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#Brutal ul li {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}/*# sourceMappingURL=nav2.css.map */

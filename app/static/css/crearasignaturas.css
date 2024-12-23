@@ -1,0 +1,14 @@
+#divFormulario {
+  display: flex;
+  justify-content: center;
+}
+#divFormulario form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(60, 151, 255);
+  border-radius: 10px;
+  padding: 10px;
+}
+#divFormulario form input, #divFormulario form select {
+  margin-bottom: 5px;
+}/*# sourceMappingURL=crearasignaturas.css.map */

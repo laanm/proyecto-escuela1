@@ -1,0 +1,130 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Inventario{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/inventario.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="filtros">
+    <div>
+        <label>Centro de costo</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Nivel Educativo</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Nivel Familia</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Grupo</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Categorización</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Area Asignación</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Procedencia</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Origen de Fondo</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Estado de Conservación</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Inventariable</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Busqueda por codigo de barra</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Busqueda por valor</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Busqueda por número de factura</label>
+        <input type="text">
+    </div>
+
+    <div>
+        <label>Busqueda por descripción</label>
+        <input type="text">
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script>
+    globalThis.inventario = new Inventario();
+</script>
+{% endblock %}

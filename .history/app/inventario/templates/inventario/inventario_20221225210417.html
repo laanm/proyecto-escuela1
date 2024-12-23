@@ -1,0 +1,29 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Inventario{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/inventario.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="filtros">
+    <div>
+        <label>Centro de costo</label>
+        <select>
+            <option value="1">Centro de costo 1</option>
+            <option value="2">Centro de costo 2</option>
+            <option value="3">Centro de costo 3</option>
+        </select>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script>
+    globalThis.inventario = new Inventario();
+</script>
+{% endblock %}

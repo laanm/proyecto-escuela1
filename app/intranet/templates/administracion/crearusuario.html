@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/crearusuario.css'%}">
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/administracion/crearusuario.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {%include "nav.html" %}
+    <div class="BarraSuperior">
+        <h4>Usuarios</h4>
+        <div style="display: flex; margin-left: 20vw;">
+            <button style=" margin-right: 10px;" class="BotonNormal" onclick="crearusuario.crearventana()">Crear Usuario</button>
+            <button style=" margin-right: 10px;" class="BotonNormal" onclick="crearusuario.crearventanaimport()">Importar Usuarios</button>
+  
+        </div>
+  </div>
+    <div id="divTablaUsuarios">
+
+        
+        <table>
+
+        </table>
+
+    </div>
+    <div id="Ventana">
+
+
+    </div>
+    <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+        const crearusuario= new javacrearusuario();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+  background-color: #cecece;
+}
+
+#DivGeneral {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Tabla {
+  margin-top: 5px;
+  width: 90%;
+}
+@media only screen and (max-width: 768px) {
+  #Tabla {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .BarraSuperior {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0 !important;
+  }
+  .BarraSuperior label {
+    display: none;
+  }
+  .BarraSuperior .BotonNormal {
+    font-size: 14px !important;
+  }
+}
+
+.Item {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 10px;
+  background-color: white;
+}
+.Item .Oculto {
+  background-color: rgba(0, 85, 197, 0.637);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  height: 30vh;
+  left: 0;
+  min-width: 13vw;
+  max-width: 13vw;
+  opacity: 0;
+  transition: 0.1s;
+}
+@media only screen and (max-width: 768px) {
+  .Item .Oculto {
+    min-width: 25vw;
+    max-width: 25vw;
+  }
+}
+.Item .Oculto button {
+  margin-right: 0 !important;
+  width: 90% !important;
+  font-size: medium;
+}
+.Item .Oculto:hover {
+  opacity: 1;
+}
+.Item .Oculto h2 {
+  color: white;
+  font-weight: bold;
+}
+.Item .Imagen {
+  min-height: 30vh;
+  max-height: 30vh;
+  min-width: 13vw;
+  max-width: 13vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 768px) {
+  .Item .Imagen {
+    min-width: 25vw;
+    max-width: 25vw;
+  }
+}
+.Item .Titulo {
+  display: flex;
+}
+.Item .Titulo label {
+  width: 100% !important;
+  text-align: start !important;
+}
+.Item .Titulo select {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.Item .Informacion {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Item .Informacion h4 {
+  min-width: 10vw;
+  background-color: #006FBB;
+  color: white;
+  text-align: center;
+}
+.Item .Informacion label, .Item .Informacion select {
+  width: 25%;
+  text-align: center;
+}
+.Item .Informacion .Info {
+  display: flex;
+}
+.Item .Informacion .TripleInfo {
+  display: flex;
+}
+.Item .Informacion .DobleInfo {
+  display: flex;
+}
+.Item .Informacion .DobleInfo h4 {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.Item .Informacion .DobleInfo label {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+}
+.Item .Informacion .DobleInfo select {
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+}
+.Item .Informacion .TripleInfo:nth-child(even) label {
+  background-color: rgb(228, 243, 255);
+}
+.Item .Informacion .Descripcion {
+  background-color: rgb(241, 241, 241);
+  height: 100%;
+}
+
+#DivBotones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#Contenido {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#Contenido input {
+  width: 80%;
+}
+#Contenido img {
+  width: 300px !important;
+  height: 150px !important;
+}
+#Contenido textarea {
+  min-width: 80%;
+  max-width: 80%;
+  height: 10vh;
+}
+
+#ContenidoImagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#ContenidoCodigos {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: auto;
+  padding-bottom: 200px;
+}
+#ContenidoCodigos img {
+  padding-top: 5px;
+}
+#ContenidoCodigos input {
+  width: 20px;
+}
+
+#TablaCategorias {
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+#TablaCategorias th {
+  width: 50%;
+  background-color: #005895;
+  color: white;
+}
+#TablaCategorias tr:nth-child(even) {
+  background-color: rgb(221, 239, 255);
+}
+
+#Ventana {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  left: 50vh;
+  top: 5000px;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* From https://css.glass */
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#Ventana img {
+  height: 80%;
+  width: 80%;
+}
+#Ventana button {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #Ventana {
+    width: 95vw !important;
+    left: 2.5vw !important;
+  }
+  #Ventana #Contenido {
+    margin-bottom: 10vh !important;
+  }
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 10vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 10vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+.OverFlow {
+  width: 95vw;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 768px) {
+  .OverFlow {
+    width: 100vw;
+    padding-left: 0;
+  }
+}
+
+.CrearPeticion {
+  margin-top: 5px;
+  padding: 10px 40px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+.CrearPeticion:hover {
+  background-color: #1abc9c;
+}
+@media only screen and (max-width: 768px) {
+  .CrearPeticion {
+    font-size: 15px;
+    padding: 15px;
+  }
+}
+
+.Eliminar {
+  padding: 5px 20px;
+  background-color: #000000;
+  color: white;
+  border: 2px solid rgb(255, 8, 0);
+  font-size: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+.Eliminar:hover {
+  background-color: #ff0000;
+}
+
+.Seleccionado {
+  background-color: #1abc9c;
+}
+
+#Cerrar {
+  position: absolute !important;
+  left: 1vw !important;
+}
+
+.BotonNormal {
+  margin-right: 10px;
+}
+
+#Ventana {
+  z-index: 300 !important;
+}
+
+#Tabla {
+  border-collapse: collapse;
+}
+#Tabla tr th {
+  background-color: #007dd1;
+  color: white;
+}
+#Tabla tr td {
+  background-color: white;
+  text-align: center;
+}
+
+#DivBuscador {
+  background-color: white;
+  margin-top: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}/*# sourceMappingURL=adminequipos.css.map */

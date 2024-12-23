@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/pedirsalas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    {% include "nav.html" %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div id="divCrearSalas">
+        <form action="{% url 'CrearPedirSalas' id id2 fechastr %}" method="POST">
+            {% csrf_token %}
+
+            <label for="">Profesor</label>
+            <select>
+                <option value="">{{request.session.usuario.userName}}</option>
+            </select>
+
+            <label>Fecha: {{fechastr}}</label>
+            <select name="hora" required>
+                <option value="{{Seleccion.id}}">{{Seleccion.horainicio}}~{{Seleccion.horafinal}}</option>
+                {% for H in Horarios%}
+
+                    {% for X in SalasPedidas%}
+
+                        {% if H.id == X.idhorario.id %}
+                            <option label="{{H.horainicio}}~{{H.horafinal}} (Ocupado)" value="" disabled></option>
+                        {%endif%}
+
+                    {%endfor%}
+                    
+                {%endfor%}
+                {% for H2 in HorariosDesocupados%}
+
+                    {% if H2.id != Seleccion.id%}
+                        <option value="{{H2.id}}">{{H2.horainicio}}~{{H2.horafinal}} (Libre)</option>
+                    {%endif%}
+                    
+
+                {%endfor%}
+            </select>
+                <label>Asignatura</label>
+                <select id="Asignatura" name="Asignatura" required>
+                    <option value="">Selecciona Asignatura</option>
+                    {%for a in Asignaturas%}
+                        <option value="{{a.idasignatura.id}}">{{a.idasignatura}}</option>
+                    {%endfor%}
+                </select>
+
+                <label>Curso</label>
+
+                <select id="Cursos" name="Cursos" required>
+                    <option value="">Selecciona Curso</option>
+                    {%for a in Cursos%}
+                        <option value="{{a.id}}">{{a.nombre}}</option>
+                    {%endfor%}
+                </select>
+
+                <label for="">Objetivo Aprendizaje</label>
+            <div>
+                <label>N°</label>
+                <input id="NumeroAprendizaje" type="number" min="0" name="numeroaprendizaje" placeholder="1" required>
+
+                
+                <input type="text" name="objetivo" placeholder="Multiplicacion y division">
+            </div>
+            
+                <button class="CrearPeticion" type="submit" id="boton" onclick="limiter()">Agendar Sala</button>
+                
+
+        </form>
+
+    </div>
+    <script>
+        var Asignatura= document.getElementById("Asignatura");
+        var Cursos= document.getElementById("Cursos");
+        var numero = document.getElementById("NumeroAprendizaje");
+        
+        function limiter(){
+            console.log(numero.value);
+            console.log(Asignatura.value);
+            console.log(Cursos.value);
+            
+            if (numero.value!="" && Asignatura.value!="" && Cursos.value!=""){
+            document.getElementById("boton").className= "invisible";
+            
+            setTimeout(function(){
+                document.getElementById("boton").classList.remove("invisible");
+            },10000);
+            }
+            
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/administracion.css'%}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+</head>
+
+<body>
+    
+    {% include "nav.html" %}
+    <div id="divAdministracion">
+        
+        
+            
+            <a href="{% url 'RenderSalas'%}">Asignacion dependencias</a>
+            <a href="{% url 'RenderHorarios'%}">Horarios</a>
+            <a href="{% url 'RenderAsignaturas' %}">Asignaturas</a>
+            <a href="{% url 'RenderSeleccionarProfesor' %}">Asignar Asignaturas</a>
+            <a href="{% url 'RenderCursos' %}">Cursos</a>
+            <a href="{% url 'RenderNoticiasFront' %}">Noticias</a>
+            <a href="{% url 'RenderMisOA' %}">Objetivos de aprendizaje</a>
+            <a href="{% url 'RenderCrearUsuario'%}">Usuarios</a>
+            <a href="{% url 'RenderPermisos' %}">Permisos Usuarios</a>
+            <a href="{% url 'RenderPagConfiguracionSistema'%}">Configuracion Sistema</a>
+
+        
+
+
+        
+    </div>
+
+</body>
+
+
+</html>

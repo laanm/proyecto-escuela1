@@ -1,0 +1,24 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Resumen{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/resumen.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<iframe
+    src="{{metabase.ruta}}"
+    frameborder="0"
+    width="100%"
+    allowtransparency
+></iframe>
+{% endblock %}
+
+{% block footer %}
+<script>
+    $(document).ready(function(){
+        //resumen.init();
+    });
+</script>
+{% endblock %}

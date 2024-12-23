@@ -1,0 +1,60 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/mantencion.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/mantencion/mantencion.js"></script>
+   
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+        
+        <div id="Menu">
+            <button class="CrearPeticion" onclick="mantencion.abrirventana()">Crear Solicitud</button>
+            <button class="CrearPeticion" onclick="mantencion.abrircategorias()">Crear Categoria</button>
+        </div>
+        
+        <div id="Tabla">
+            <table id="MalditaTabla">
+                <tr>
+                    <th>Categoria</th>
+                    <th>Prioridad</th>
+                    <th>Tipo De Obra</th>
+                    <th>Informacion</th>
+                </tr>
+                <tr>
+                    <td>Electrico</td>
+                    <td>Alta</td>
+                    <td>Obra Mayor</td>
+                    <td><button>Info</button></td>
+                </tr>
+            </table>
+        </div>
+        
+        
+        <div id="Ventana">
+            
+        </div>
+        <div id="Cargando"><div class="preloader"></div></div>
+    <script>
+
+        const mantencion= new javamantencion("{{request.session.usuario.id}}")
+        
+        
+    </script>
+</body>
+</html>

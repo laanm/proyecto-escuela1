@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/salas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <meta content="width=device-width, initial-scale=1" name="viewport" /> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+
+    <script src="/static/js/pedirsalas/pedirsalas.js"></script>
+
+
+
+
+
+</head>
+
+<body>
+    
+    {% include "nav.html" %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  
+    <div id="diaActual"><a><i id="izquierda" class="fa-solid fa-arrow-left fa-2xl"></i></a><h3 id="diaPasado"></h3><h1 onclick="pedirsalas.MostrarCalendario()" id="diaGrande"></h1><h3 id="diaSiguiente"></h3><a><i id="derecha" class="fa-solid fa-arrow-right fa-2xl"></i></a></div>
+    <div id="CalendarioDinamico"></div>
+    <div class="divPrincipal" id="divPrincipal">
+        
+        <div class="calendario" id="calendario">
+           <table>
+               {% with listo=0 %}
+                <tr>
+                    <th>
+                        
+                    </th>
+                    
+                    {% for a in Salas %}
+                        <th>
+                            {{a.nombre}}
+                        </th>
+                    {% endfor%}
+                {% for a in Horarios%}   
+                
+                    <tr>
+                        <td>
+                        
+                        <label style="Font-weight: bold;">{{a.horainicio}}</label>
+                        
+                        <label> - </label>
+                         <label style="Font-weight: bold;">{{a.horafinal}}</label>
+                        </td>
+
+                        {% for x in Salas%}
+                            <td class="coso">
+
+                                {% for p in SalasPedidas%}
+
+                                    {%if p.idhorario.id == a.id and p.idSala.id == x.id %}
+                                        
+                                    {% if request.session.usuario.id == p.idProfesor.id %}
+                                        <a class="Ocupado"  id="{{p.id}}" href="{% url 'EliminarPeticionSala' p.id %}">
+                                        <div class="DivPropio">
+                                    {%else%}
+                                    
+                                        <a class="Ocupado">
+                                        <div class="DivOcupado">
+                                    {%endif%}
+                                    
+                                            
+                                            <label>{{p.idProfesor}}</label>
+                                            <label></label>
+                                            {% if p.idAsignatura.nombre|length > 20 %}
+                                                <label class="Asignatura">{{p.idAsignatura}}</label>
+                                            {%else%}
+                                            <label >{{p.idAsignatura}}</label>
+                                            {%endif%}
+                                            <label>{{p.idCurso}}</label>
+                                            <label>OA N°{{p.numeroAprendizaje}}</label>
+                                           
+                                            
+                                            
+
+                                    </div>
+                                    </a>
+                                    
+                                
+                                    {%endif%}
+
+
+
+                                {%endfor%}
+                                
+                                
+                                        {% if FueraDeFecha == True %}
+                                        <a class="NoPedida" href="">-</a>
+                                        {%else%}
+                                            <a class="NoPedida" href="{% url 'RenderCrearPedirSalas' x.id a.id Dia|date:'d-m-Y'  %}">Libre</a>
+                                        {%endif%}
+                                
+
+                                </div>
+
+                                
+                               
+                            </td>
+                            
+
+                        {%endfor%}
+                
+
+                    </tr>
+
+                {% endfor %}
+                </tr>
+               {% endwith%}
+            </table>
+        </div>
+    </div>
+
+    <div id="Ventana"></div>
+    <a id="awa" > </a>
+    <div id="Cargando"><div class="preloader"></div></div>
+    <script>
+
+        const main= new MasterMain();
+        const pedirsalas=new javapedirsalas("{{request.session.usuario.id}}","{{request.session.usuario.userPerfil}}");
+        
+
+
+        console.log(pedirsalas.idusuario)
+        
+
+        
+         
+
+
+
+    </script>
+
+</body>
+
+
+</html>

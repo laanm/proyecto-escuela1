@@ -1,0 +1,141 @@
+html{
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+    body{
+        margin: 0
+    }
+}
+
+#Menu{
+    display: flex;
+    width: 75vw;
+    height: 10vh;
+    background-color: #8dbdff;
+    align-items: center;
+    justify-content: center;
+    button{
+        width: 30%;
+        height: 80%;
+        border: 1px solid black;
+    }
+}
+
+
+
+#Ventana{
+    
+    position: fixed;
+    background-color: white;
+    color: black;
+    top: 200vh;
+    left: 7.5vw;
+    height: 90vh;
+    width: 90vw;
+    z-index: 1000;
+    border-radius: 10px;
+    overflow-y: auto;
+    border: 2px solid #53AF09;
+    
+}
+#Cerrar{
+    position: sticky;
+    left:10px;
+    top:10px;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+
+.Ventana_Crear_Producto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    
+    @keyframes AnimSubirVentana{
+    0%{
+        top:200vh;
+        
+    }
+    100%{
+        top:30vh;
+    }   
+    }
+
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    @keyframes AnimCerrarVentana{
+    0%{
+        top:30vh;
+    }
+    100%{
+        top:200vh;
+    }
+    }
+
+//efecto cargando global xd
+#Cargando{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1500;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - {% block titulo %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/inventario/css/master.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.1/chart.min.js"></script>
+
+    <script>
+        function loading_show(){
+            $("#loading").css("display", "flex")
+        }
+
+        function loading_hide(){
+            $("#loading").css("display", "none")
+        }
+    </script>
+
+    <script src="/inventario/js/master.js"></script>
+    <script src="/inventario/js/inventario.js"></script>
+    <script src="/inventario/js/resumen.js"></script>
+
+
+    {% block scripts %}{% endblock %}
+
+</head>
+<body>
+    <header>
+        <h1>Sistema de Inventario</h1>
+        <ul>
+            <li><a href="/inventario"><i class="fa-solid fa-chart-simple"></i> Resumen</a></li>
+            <li><a href="/inventario/info"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a></li>
+            <li><a href="#"><i class="fa-solid fa-plus"></i> Agregar Inventario</a></li>
+        </ul>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    {% block footer %}{% endblock %}
+
+    <div id="loading">
+        <div class="custom-loader"></div>
+    </div>
+
+    <script>
+        globalThis.inventario = new Inventario();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+#BotonesSuperiores{
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1%;
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+    background-color: white;
+    border-radius: 10px;
+    input[type="number"]{
+        width: 50px;
+    }
+}
+#Principal{
+    width: 95%;
+    height: 95%;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 1%;
+    table{
+        width: 100%;
+        height: 100%;
+        border-collapse: collapse;
+        th{
+            background-color: #005895;
+            color: white;
+        }
+        td{
+            text-align: center;
+            height: 5vh;
+        }
+        tr:nth-child(odd){
+            background-color: #d8efff;
+        }
+        
+        
+    }
+}
+#Contenido{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body{
+    background: #cecece;
+    overflow-x: hidden;
+}
+
+.BotonAprobar{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #00a6d8;
+    color: #FFFFFF;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    transition-duration: 0.2s;
+    padding-left: 2px;
+    padding-right: 2px;
+    &:hover{
+        background-color: #0085ad;
+    }
+}
+
+.BotonRechazar{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #dd3333;
+    color: #FFFFFF;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    transition-duration: 0.2s;
+    padding-left: 2px;
+    padding-right: 2px;
+    &:hover{
+        background-color: #b12b2b;
+    }
+}
+#TablaEstudiante,#TablaPadre,#TablaMadre,#TablaAntecedentesAcademicos,#AntecedentesSociales,#AntecendesDeSalud,#TableDocumentacion,#TablaDeberes,.TablaPersonalizada{
+    border: solid black;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-collapse: collapse;
+    th{
+        background-color: rgb(255, 233, 106);
+        border: solid 1px;
+        color: black;
+    }
+    td{
+        border: solid 1px;
+        text-align: center;
+        color: black;
+        input,select{
+            text-align: center;
+            width: 100%;
+            &:focus{
+                background-color: #00ffcc;
+                color: black;
+            }
+            &:hover{
+            background-color: #00ffcc;
+            }
+        }
+        
+    }
+}
+
+.MiniVentana{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    left: 35vw !important;
+    height: 20vh !important;
+    width: 40vw !important;
+    z-index: 1100 !important;
+   
+}
+#Cerrar{
+    position: relative;
+    left:10px;
+    top:10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    
+    @keyframes AnimSubirVentana{
+    0%{
+        top:200vh;
+        
+    }
+    100%{
+        top:5vh;
+    }   
+    }
+
+    .CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    @keyframes AnimCerrarVentana{
+    0%{
+        top:5vh;
+    }
+    100%{
+        top:200vh;
+    }
+    }

@@ -1,0 +1,145 @@
+body{
+    background-color: #cecece;
+}
+#Ventana{
+    #Contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        width: 95%;
+        height: 100%;
+        textarea{
+            width: 80%;
+            height: 25%;
+        }
+        input{
+            width: 50%;
+        }
+        
+    }
+        input,select{
+            margin-bottom: 5px;
+        }
+    
+}
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:100px;
+    }
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:100px;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+#divTablaUsuarios{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+
+    table{
+        margin-top: 10px;
+        width: 90%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border: 1px solid #296d74;
+        background-color: white;
+        tr{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            th{
+                min-width: 50px;
+                width: 50px;
+                flex-grow: 1;
+                font-size: 20px;
+                text-align: center;
+                background-color: #005895;
+                color:white;
+                
+            }
+            td{
+
+                height: 70px;
+                height: 100%;
+                width: 100%;
+                min-width: 50px;
+                flex-grow: 1;
+                transition: 0.3s;
+                display: flex;
+                font-weight: bold;
+                flex-direction: column;
+                
+                justify-items: center;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            td:nth-child(4)
+            {
+                align-items: center;
+            }
+        }
+        tr:hover{
+            background-color: #acacac;
+        }
+    }
+}
+
+#CrearPeticion{
+    width: 130px;
+    height: 45px;
+    margin-top: 10px;
+    margin-inline: 5px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}

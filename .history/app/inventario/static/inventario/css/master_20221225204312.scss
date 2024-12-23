@@ -1,0 +1,60 @@
+//import roboto font google
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+$blue : #0E2A47;
+$blue-light : #1E3A57;
+
+body{
+    margin: 0px;
+    padding : 0px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-image: url(/static/inventario/img/background.svg);
+}
+
+header{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-bottom: 1px solid $blue-light;
+    padding-bottom: 10px;
+    background-color: #fff;
+
+    h1{
+        margin: 0px;
+        font-size: 26px;
+        padding: 0px;
+        margin-top: 20px;
+        color: $blue;
+    }
+
+    ul{
+        display: flex;
+        height: 40px;
+        margin: 0px;
+        padding: 0px;
+        gap: 5px;
+
+        li{
+            list-style: none;
+            
+            a{
+                text-decoration: none;
+                font-size: 15px;
+                display: flex;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: $blue;
+                color : #fff;
+            }
+        }
+    }
+}

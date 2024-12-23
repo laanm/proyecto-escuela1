@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario - {% block titulo %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="/static/inventario/css/master.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function loading_show(){
+            $("#loading").css("display", "flex")
+        }
+
+        function loading_hide(){
+            $("#loading").css("display", "none")
+        }
+    </script>
+
+    <script src="/static/inventario/js/master.js"></script>
+    <script src="/static/inventario/js/inventario.js"></script>
+    <script src="/static/inventario/js/resumen.js"></script>
+
+
+    {% block scripts %}{% endblock %}
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/static/inventario/img/logo.png" alt="Logo">
+            <h1>Sistema de Inventario</h1>
+        </div>
+        <ul>
+            <li><a href="/inventario"><i class="fa-solid fa-chart-simple"></i> Resumen</a></li>
+            <li><a href="/inventario/info"><i class="fa-solid fa-boxes-stacked"></i> Inventario</a></li>
+            <li><a href="#" onclick="master.agregar_inventario()"><i class="fa-solid fa-plus"></i> Agregar Inventario</a></li>
+        </ul>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    
+
+    <div id="loading">
+        <div class="custom-loader"></div>
+    </div>
+
+    <script>
+        globalThis.inventario = new Inventario();
+        globalThis.resumen = new Resumen();
+        globalThis.master = new Master();
+    </script>
+
+    {% block footer %}{% endblock %}
+</body>
+</html>

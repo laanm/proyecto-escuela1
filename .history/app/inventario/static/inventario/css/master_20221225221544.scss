@@ -1,0 +1,212 @@
+//import roboto font google
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+
+$blue : #0E2A47;
+$blue-light : #1E3A57;
+$green : #71BC78;
+
+body{
+    margin: 0px;
+    padding : 0px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-image: url(/static/inventario/img/background.svg);
+    align-items: center;
+}
+
+header{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding-bottom: 10px;
+    background-color: rgba(255,255,255,0.95);
+    shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+
+
+    h1{
+        margin: 0px;
+        font-size: 30px;
+        padding: 0px;
+        color: $blue;
+        display: flex;
+        align-items: center;
+        margin-right: 40px;
+    }
+
+    ul{
+        display: flex;
+        height: 40px;
+        margin: 0px;
+        padding: 0px;
+        gap: 5px;
+        align-items: center;
+
+        li{
+            list-style: none;
+            
+            a{
+                text-decoration: none;
+                font-size: 15px;
+                display: flex;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: $blue;
+                color : #fff;
+                transition: all 0.3s ease-in-out;
+                gap: 5px;
+
+                &:hover{
+                    background-color: $green;
+                }
+            }
+        }
+    }
+}
+
+main{
+    width: 80%;
+    height: auto;
+    min-height: 300px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 40px;
+
+    .filtros{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        background-color: rgb(238, 240, 255);
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        align-items: center;
+
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            background-color: rgb(210, 215, 250);
+            padding: 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+
+            label{
+                font-size: 12px;
+                color: $blue;
+                display: flex;
+                flex-wrap: nowrap;
+                gap:4px;
+                align-items: center;
+                position: relative;
+                padding-left: 0px;
+
+                // has a button
+                &:has(button){
+                    padding-left: 22px;
+                }
+
+                button{
+                    width: 18px;
+                    height: 18px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #71BC78;
+                    border: none;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    position: absolute;
+                    left: 0px;
+                    transition: all 0.3s ease-in-out;
+
+                    i{
+                        font-size: 12px;
+                    }
+
+                    &:hover{
+                        
+                        &::after{
+                            content: "Agregar";
+                            font-size: 10px;
+                            color: #fff;
+                            position: absolute;
+                            top: 0px;
+                            left: 20px;
+                            background-color: #71BC78;
+                            padding: 2px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+            }
+
+            select, input{
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+                color: $blue;
+            }
+        }
+
+        .filtro_boton{
+            display: flex;
+            width: 100px;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            background-color: $blue;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            border: none;
+
+            &:hover{
+                background-color: $green;
+            }
+        }
+    }
+}
+
+.swal_form{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+    div{
+        display: flex;
+        gap: 5px;
+        margin-bottom: 10px;
+
+        label{
+            font-size: 12px;
+            color: $blue;
+            display: flex;
+            align-items: center;
+        }
+
+        input{
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 12px;
+            color: $blue;
+        }
+    }
+}

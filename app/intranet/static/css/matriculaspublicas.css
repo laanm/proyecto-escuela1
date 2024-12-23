@@ -1,0 +1,294 @@
+#DivPrincipal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#DivPrincipal h2, #DivPrincipal .SeccionPersonalizada {
+  width: 100%;
+  text-align: center;
+  background-color: #34495e;
+  color: white;
+}
+#DivPrincipal h3 {
+  width: 70%;
+  text-align: center;
+}
+#DivPrincipal #TablaEstudiante, #DivPrincipal #TablaPadre, #DivPrincipal #TablaMadre, #DivPrincipal #TablaAntecedentesAcademicos, #DivPrincipal #AntecedentesSociales, #DivPrincipal #AntecendesDeSalud, #DivPrincipal #TableDocumentacion, #DivPrincipal #TablaDeberes, #DivPrincipal .TablaPersonalizada {
+  border: solid;
+  width: 100%;
+  background-color: grey;
+  border-collapse: collapse;
+}
+#DivPrincipal #TablaEstudiante tr, #DivPrincipal #TablaPadre tr, #DivPrincipal #TablaMadre tr, #DivPrincipal #TablaAntecedentesAcademicos tr, #DivPrincipal #AntecedentesSociales tr, #DivPrincipal #AntecendesDeSalud tr, #DivPrincipal #TableDocumentacion tr, #DivPrincipal #TablaDeberes tr, #DivPrincipal .TablaPersonalizada tr {
+  height: 40px;
+}
+#DivPrincipal #TablaEstudiante th, #DivPrincipal #TablaPadre th, #DivPrincipal #TablaMadre th, #DivPrincipal #TablaAntecedentesAcademicos th, #DivPrincipal #AntecedentesSociales th, #DivPrincipal #AntecendesDeSalud th, #DivPrincipal #TableDocumentacion th, #DivPrincipal #TablaDeberes th, #DivPrincipal .TablaPersonalizada th {
+  background-color: rgb(255, 233, 106);
+  border: solid 1px;
+}
+#DivPrincipal #TablaEstudiante td, #DivPrincipal #TablaPadre td, #DivPrincipal #TablaMadre td, #DivPrincipal #TablaAntecedentesAcademicos td, #DivPrincipal #AntecedentesSociales td, #DivPrincipal #AntecendesDeSalud td, #DivPrincipal #TableDocumentacion td, #DivPrincipal #TablaDeberes td, #DivPrincipal .TablaPersonalizada td {
+  border: solid 1px;
+  min-width: 30px;
+}
+#DivPrincipal #TablaEstudiante td input, #DivPrincipal #TablaEstudiante td select, #DivPrincipal #TablaPadre td input, #DivPrincipal #TablaPadre td select, #DivPrincipal #TablaMadre td input, #DivPrincipal #TablaMadre td select, #DivPrincipal #TablaAntecedentesAcademicos td input, #DivPrincipal #TablaAntecedentesAcademicos td select, #DivPrincipal #AntecedentesSociales td input, #DivPrincipal #AntecedentesSociales td select, #DivPrincipal #AntecendesDeSalud td input, #DivPrincipal #AntecendesDeSalud td select, #DivPrincipal #TableDocumentacion td input, #DivPrincipal #TableDocumentacion td select, #DivPrincipal #TablaDeberes td input, #DivPrincipal #TablaDeberes td select, #DivPrincipal .TablaPersonalizada td input, #DivPrincipal .TablaPersonalizada td select {
+  text-align: center;
+  width: 100%;
+  height: 40px;
+}
+#DivPrincipal #TablaEstudiante td input:hover, #DivPrincipal #TablaEstudiante td select:hover, #DivPrincipal #TablaPadre td input:hover, #DivPrincipal #TablaPadre td select:hover, #DivPrincipal #TablaMadre td input:hover, #DivPrincipal #TablaMadre td select:hover, #DivPrincipal #TablaAntecedentesAcademicos td input:hover, #DivPrincipal #TablaAntecedentesAcademicos td select:hover, #DivPrincipal #AntecedentesSociales td input:hover, #DivPrincipal #AntecedentesSociales td select:hover, #DivPrincipal #AntecendesDeSalud td input:hover, #DivPrincipal #AntecendesDeSalud td select:hover, #DivPrincipal #TableDocumentacion td input:hover, #DivPrincipal #TableDocumentacion td select:hover, #DivPrincipal #TablaDeberes td input:hover, #DivPrincipal #TablaDeberes td select:hover, #DivPrincipal .TablaPersonalizada td input:hover, #DivPrincipal .TablaPersonalizada td select:hover {
+  background-color: #7dffe5;
+}
+.TituloTabla {
+  width: 100%;
+  text-align: center;
+  background-color: red;
+}
+.TituloTabla th {
+  width: 100%;
+  background-color: blue;
+}
+
+.CrearPeticion {
+  margin-top: 10px;
+  padding: 10px 40px;
+  background-color: #34495e;
+  color: white;
+  border: 2px solid #1abc9c;
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+}
+.CrearPeticion:hover {
+  background-color: #1abc9c;
+}
+
+#Personalizado, #TablasPersonalizadas {
+  width: 100%;
+}
+
+.TablaPersonalizada {
+  width: 100%;
+}
+.TablaPersonalizada tr th {
+  min-width: 50%;
+  width: 50%;
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 10vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 10vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Tabla {
+  margin-top: 5px;
+  border-collapse: collapse;
+  width: 100%;
+}
+#Tabla tr {
+  transition: 0.5s;
+  max-width: 250px;
+  background-color: white;
+}
+#Tabla tr th {
+  background-color: #34495e;
+  padding: 10px;
+  max-width: 250px;
+}
+#Tabla tr th:first-child {
+  border-top-left-radius: 10px;
+}
+#Tabla tr th:last-child {
+  border-top-right-radius: 10px;
+}
+#Tabla tr td {
+  color: black;
+  text-align: center;
+}
+
+#Contenido {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#Contenido input {
+  width: 80%;
+}
+
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+#Menu {
+  position: fixed;
+  display: flex;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex-direction: column;
+  padding: 5px;
+  background-color: #830000;
+  left: -1000px;
+  top: 30vh;
+}
+#Menu h2 {
+  text-align: center;
+  color: white;
+}
+#Menu button {
+  padding: 1px;
+  border: 1px solid #00ffcc;
+  background-color: #34495e;
+  color: white;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+#Menu button:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+.AbrirMenu {
+  animation-name: AbrirMenu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.CerrarMenu {
+  animation-name: CerrarMenu;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes AbrirMenu {
+  0% {
+    left: -1000px;
+  }
+  1% {
+    left: -200px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes CerrarMenu {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -200px;
+  }
+}
+.BEdit {
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: #34495e;
+  color: #00ffcc;
+  border: #00ffcc solid 1px;
+  padding-inline: 5px;
+}
+.BEdit:hover {
+  background-color: #00ffcc;
+  color: black;
+}
+
+.BEliminar {
+  border-radius: 10px;
+  background-color: #34495e;
+  color: #ff0000;
+  border: #ff0000 solid 1px;
+  padding-inline: 5px;
+}
+.BEliminar:hover {
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
+}
+
+#MalditoCanvas {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#MalditoCanvas #BotonesCanvas {
+  position: absolute;
+  z-index: 999999999;
+  top: 20px;
+}
+#MalditoCanvas #FondoBlanco {
+  background-color: white;
+  width: 800px;
+  height: 600px;
+}
+#Ventana {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #b7b7e6 60%, #8066ff 95%);
+  height: 100%;
+}
+#Ventana label {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;
+  padding-bottom: 10px;
+}
+
+#Comprobacion {
+  margin-bottom: 10px;
+}/*# sourceMappingURL=matriculaspublicas.css.map */

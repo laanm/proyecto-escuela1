@@ -1,0 +1,213 @@
+#Contenedor-Medicamentos, #Contenedor-Enfermedad {
+  height: 35vh;
+  margin-bottom: 60px;
+}
+
+.OverFlow {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+@media only screen and (max-width: 768px) {
+  .OverFlow {
+    width: 100vw;
+    padding-left: 0;
+  }
+}
+
+.DivMedicamento {
+  height: 40vh;
+  width: 20vw;
+  min-width: 20vw;
+  position: relative;
+  margin-right: 10px;
+  box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+}
+@media only screen and (max-width: 768px) {
+  .DivMedicamento {
+    min-width: 40vw;
+    width: 50vw;
+  }
+  .DivMedicamento h2 {
+    max-height: 10vh;
+    font-size: small;
+  }
+}
+.DivMedicamento h2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.315);
+  color: white;
+}
+.DivMedicamento h3 {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.315);
+  color: white;
+  vertical-align: bottom;
+  bottom: 0;
+}
+
+.Imagen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+}
+.Imagen:hover {
+  filter: blur(2px);
+}
+
+.DivEnfermedad {
+  height: 40vh;
+  width: 20vw;
+  min-width: 20vw;
+  position: relative;
+  margin-right: 10px;
+  box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+  -webkit-box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: -1px 5px 10px -1px rgba(0, 0, 0, 0.41);
+}
+@media only screen and (max-width: 768px) {
+  .DivEnfermedad {
+    min-width: 30vw;
+    width: 45vw;
+  }
+}
+.DivEnfermedad h2 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.315);
+  color: white;
+  overflow: hidden;
+}
+.DivEnfermedad h3 {
+  overflow: hidden;
+}
+.DivEnfermedad:hover {
+  filter: blur(2px);
+}
+
+#Contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+}
+#Contenido textarea {
+  width: 90%;
+  height: 80%;
+  resize: none;
+  font-size: medium;
+}
+
+#Ventana {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  max-height: 100vh;
+  left: 50vh;
+  top: 5000px;
+  z-index: 100;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  /* From https://css.glass */
+  background: rgba(25, 47, 49, 0.7607843137);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.6px);
+  -webkit-backdrop-filter: blur(7.6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#Ventana h1 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#Ventana img {
+  height: 80%;
+  width: 80%;
+}
+#Ventana button {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 768px) {
+  #Ventana {
+    width: 90vw;
+    left: 5vw;
+  }
+}
+
+.AbrirVentana {
+  animation-name: AnimSubirVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimSubirVentana {
+  0% {
+    top: 2000px;
+  }
+  100% {
+    top: 10vh;
+  }
+}
+.CerrarVentana {
+  animation-name: AnimCerrarVentana;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes AnimCerrarVentana {
+  0% {
+    top: 10vh;
+  }
+  100% {
+    top: 2000px;
+  }
+}
+#Cerrar {
+  position: absolute;
+  left: 10px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100%;
+  border: solid 1px rgb(0, 0, 0);
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+#Cerrar:hover {
+  background-color: rgb(255, 102, 102);
+}
+
+#Tablaa {
+  background-color: white;
+  border-collapse: collapse;
+  width: 80%;
+}
+#Tablaa th {
+  background-color: rgb(0, 119, 255);
+  color: white;
+}
+#Tablaa td {
+  color: black;
+  text-align: center;
+}/*# sourceMappingURL=inicio.css.map */

@@ -1,0 +1,52 @@
+[
+    {
+        "model": "auth.user",  
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$IYrw4NqzOzcLnCxvvL1boU$31HXURLE7ywRgJo0Z4xSxkuF9jqn6VLq58p4xfR0P4k=",
+            "last_login": "2022-05-27 05:16:27.885569",
+            "is_superuser": true,
+            "username": "admin",
+            "last_name": "",
+            "email": "msalinasnicoletti@gmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-05-27 06:16:27.885569",
+            "first_name": ""
+        }
+    },
+    {
+        "model": "login.Perfiles",  
+        "pk": 1,
+        "fields": {
+            "nombre": "Administrador"
+        }
+    },
+    {
+        "model": "login.Perfiles",  
+        "pk": 2,
+        "fields": {
+            "nombre": "Cordinador"
+        }
+    },
+    {
+        "model": "login.Perfiles",  
+        "pk": 3,
+        "fields": {
+            "nombre": "Impresor"
+        }
+    },
+    {
+        "model": "login.Perfiles",
+        "pk": 4,
+        "fields": {
+            "nombre": "Profesor"
+        }
+    }
+    
+
+    
+
+    
+]
+

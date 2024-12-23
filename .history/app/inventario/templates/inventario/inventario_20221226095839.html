@@ -1,0 +1,130 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Inventario{% endblock %}
+
+{% block scripts %}
+    
+{% endblock %}
+
+{% block content %}
+
+<div class="filtros">
+    <div>
+        <label>Centro de costo <button type="button" onclick="inventario.crear_centro_costo()"><i class="fa-solid fa-plus"></i></button></i></label>
+        <select id="centro_de_costo">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Nivel Educativo <button type="button" onclick="inventario.crear_nivel_educativo()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="nivel_educativo">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Familia <button type="button" onclick="inventario.crear_familia()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="familias">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    
+    <div>
+        <label>Grupo <button type="button" onclick="inventario.crear_grupo()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="grupo"> 
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Categorización <button type="button" onclick="inventario.crear_categorizacion()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="categorizacion">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Area Asignación <button type="button" onclick="inventario.crear_area_asignacion()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="area_asignacion">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Procedencia <button type="button" onclick="inventario.crear_procedencia()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="procedencia">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Origen de Fondo <button type="button" onclick="inventario.crear_origen_fondo()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="origen_fondo">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Estado de Conservación <button type="button" onclick="inventario.crear_estado_conservacion()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="estado_conservacion">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Inventariable <button type="button" onclick="inventario.crear_inventariable()"><i class="fa-solid fa-plus"></i></button></label>
+        <select id="inventariable">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Salas</label>
+        <select id="salas">
+            <option value="">Seleccionar...</option>
+        </select>
+    </div>
+
+    <div>
+        <label>Busqueda por codigo de barra</label>
+        <input type="text" placeholder="Sin Filtro" id="codigo_barra">
+    </div>
+
+    <div>
+        <label>Busqueda por valor</label>
+        <input type="text" placeholder="Sin Filtro" id="valor">
+    </div>
+
+    <div>
+        <label>Busqueda por RUT del proveedor</label>
+        <input type="text" placeholder="Sin Filtro" id="proveedor">
+    </div>
+
+    <div>
+        <label>Busqueda por número de factura</label>
+        <input type="number" placeholder="Sin Filtro" id="numero_factura">
+    </div>
+
+    <div>
+        <label>Busqueda por descripción</label>
+        <input type="text" placeholder="Sin Filtro" id="descripcion">
+    </div>
+    <div>
+        <label>Busqueda por fecha</label>
+        <input type="date" id="fecha_compra">
+    </div>
+
+    <button class="filtro_boton" type="button">Filtrar</button>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+<script>
+    
+    inventario.init()
+</script>
+{% endblock %}

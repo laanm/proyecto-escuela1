@@ -1,0 +1,17 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Inventario{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/inventario.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+<script>
+    globalThis.inventario = new Inventario();
+</script>
+{% endblock %}

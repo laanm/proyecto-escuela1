@@ -1,0 +1,91 @@
+version: '3.11'
+
+services:
+  nginx-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '80:80' # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81' # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+
+    # Uncomment the next line if you uncomment anything in the section
+    # environment:
+      # Uncomment this if you want to change the location of 
+      # the SQLite DB file within the container
+      # DB_SQLITE_FILE: "/data/database.sqlite"
+
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: 'true'
+    environment:
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "npm"
+      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_NAME: "npm"
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: 'true'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - db
+
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+  app:
+    build: app
+    container_name: intranet-django
+    restart: always
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env.prod
+    command:
+      "gunicorn --workers=1 intranet.wsgi:application --bind=0.0.0.0:8000 --reload --timeout=300"
+    depends_on:
+      - base_de_datos
+
+  nginx:
+    image: nginx:1.17
+    restart: always
+    container_name: intranet-ngx
+    expose:
+      - "80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+  base_de_datos:
+    container_name: intranet-db
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=laan
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_DB=intranet
+    ports:
+      - '3013:5432'
+
+volumes:
+  postgres_data:
+
+networks:
+  default:
+    external: true
+    name: scoobydoo

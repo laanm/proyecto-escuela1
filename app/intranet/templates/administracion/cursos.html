@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/cursos.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/administracion/crearcursos.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    {% include "nav.html" %}
+
+    <div class="BarraSuperior">
+        <h4>Cursos</h4>
+        <div id="DivBotones" style="display: flex; margin-left: 20vw;">
+            <button style=" margin-right: 10px;" class="BotonNormal" onclick="crearcursos.crearventana()">Crear Cursos</button>
+            <button style=" margin-right: 10px;" class="BotonNormal"  onclick="crearcursos.crearventanaimport()">Importar Cursos</button>
+
+        </div>
+    </div>
+    <div id="divTablaCursos">
+
+
+    </div>
+
+    <div id="Ventana">
+
+
+    </div>
+    <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+
+    <script>
+
+        const crearcursos= new javacrearcursos();
+
+    </script>
+
+</body>
+</html>

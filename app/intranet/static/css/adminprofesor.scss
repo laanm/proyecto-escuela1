@@ -1,0 +1,83 @@
+
+#Cabezera{
+    width: 80%;
+    
+    background-color: green;
+
+    display: flex;
+    
+   justify-content: space-between;
+   align-items: center;
+
+   div{
+
+       display: flex;
+       align-items: center;
+       p{
+           font-size: 20px;
+           padding-right: 10px;
+       }
+       input{
+           height: 100%;
+           font-size: 20px;
+           border-radius: 10px;
+       }
+   }
+    
+}
+
+
+#TablaProfesor {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 70vh;
+
+    table{
+        width: 40%;
+        border-collapse: collapse;
+        tr{
+            
+            text-align: center;
+            border-bottom: 1px solid #dddddd;
+            th{
+                background-color: rgb(60, 151, 255);
+                
+                width: 50vh;
+                
+            }
+            
+       
+        }
+        tr:nth-child(even){
+            
+        }
+
+        tr:hover{
+            background-color: gray;
+        }
+    }
+
+
+
+}
+
+#CrearProfesor{
+    padding: 10px 40px;
+    background-color: rgb(60, 151, 255);
+    color: black;
+    border: 2px solid rgb(60, 151, 255);
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+
+    &:hover {
+        
+        background-color: transparent;
+    }
+}
+

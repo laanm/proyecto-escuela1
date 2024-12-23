@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="/static/login/login.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="left">
+            <div class="saludo">
+                <h1>¡Bienvenido(a) a MiColegio!</h1>
+                <h2>Software de Automatización de Procesos de Gestión escolar y de inventario</h2>
+            </div>
+        
+        </div>
+        <div class="right">
+            <img src="/static/login/logo-micolegio.png" alt="logo">
+            <form class="formulario" action="/login/autenticar" method="post">
+                {% csrf_token %}
+                <div class="input">
+                    <span>Ingrese su Email</span>
+                    <input type="email" id="email" name="email" placeholder="micorreo@proveedor.cl" required>
+                </div >
+                <div class="input">
+                    <span>Ingrese su contraseña</span>
+                    <input type="password" name="pass" id="password" placeholder="*********" required>
+                </div>
+
+                <button class="ingresar">Ingresar</button>
+
+                {% if error != 0 %}
+                    <div class="error">
+                        {% if error == 1 %}
+                            <span>Usuario o contraseña incorrectos!</span>
+                        {% endif %}
+                        {% if error == 2 %}
+                            <span>El correo no existe!</span>
+                        {% endif %
+                    </div>
+                {% endif %}
+
+                <div class="olvido">
+                    <span>¿Olvidó su contraseña?</span>
+                    <a href="#">Recuperar contraseña</a>
+                </div>
+
+                
+            </form>
+
+            <span class="copyright">© SN Software Solution SPA </span>
+
+        </div>
+    </div>
+</body>
+</html>

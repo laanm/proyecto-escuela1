@@ -1,0 +1,334 @@
+#DivPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    h2,.SeccionPersonalizada{
+        width: 100%;
+        text-align: center;
+        background-color: #34495e;
+        color: white;
+        
+    }
+    h3{
+        width: 70%;
+        text-align: center;
+    }
+    #TablaEstudiante,#TablaPadre,#TablaMadre,#TablaAntecedentesAcademicos,#AntecedentesSociales,#AntecendesDeSalud,#TableDocumentacion,#TablaDeberes,.TablaPersonalizada{
+        border: solid;
+        width: 100%;
+        background-color: grey;
+        border-collapse: collapse;
+        tr{
+            height: 40px;
+        }
+        th{
+            background-color: rgb(255, 233, 106);
+            border: solid 1px;
+            
+        }
+        td{
+            border: solid 1px;
+            min-width: 30px;
+            input,select{
+                text-align: center;
+                width: 100%;
+                height: 40px;
+                &:hover{
+                background-color: #7dffe5;
+                }
+            }
+            input[type="checkbox"]{
+               
+            }
+            
+        }
+    }
+}
+
+.TituloTabla{
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    th{
+        width: 100%;
+        background-color: blue;
+    }
+}
+
+.CrearPeticion{
+    margin-top: 10px;
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+#Personalizado,#TablasPersonalizadas{
+    width: 100%;
+   
+}
+
+.TablaPersonalizada{
+    width: 100%;
+    tr{
+        th{
+            min-width: 50%;
+            width: 50%;
+        }
+    }
+}
+
+
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:10vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:10vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+#Tabla{
+    margin-top: 5px;
+    border-collapse: collapse;
+    width: 100%;
+    tr{
+        transition: 0.5s;
+        max-width: 250px;
+        background-color: white;
+        th{
+            
+            background-color: #34495e;
+            padding: 10px;
+            max-width: 250px;
+            
+        }
+        th:first-child{
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child{
+            border-top-right-radius: 10px;
+        }
+        td{
+            color: black;
+            text-align: center;
+            
+        }
+        
+    }
+}
+#Contenido{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    input{
+        width: 80%;
+    }
+}
+
+#Cerrar{
+    position: absolute;
+    left:10px;
+    width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+
+
+#Menu{
+    position: fixed;
+    display: flex;
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #830000;
+    left: -1000px;
+    top:30vh;
+    h2{
+        text-align: center;
+        color: white;
+    }
+    button{
+        padding: 1px;
+        border: 1px solid #00ffcc;
+        background-color: #34495e;
+        color: white;
+        border-radius: 20px;
+        margin-top: 5px;
+        &:hover{
+            background-color: #00ffcc;
+            color: black;
+        }
+    }
+}
+.AbrirMenu{
+    animation-name: AbrirMenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.CerrarMenu{
+    animation-name: CerrarMenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes AbrirMenu{
+    0%{
+        left:-1000px
+    }
+    1%{
+        left:-200px
+    }
+    100%{
+        left:0px;
+    }
+}
+@keyframes CerrarMenu{
+    0%{
+        left:0px;
+    }
+    
+    100%{
+        left:-200px
+        
+    }
+}
+
+.Edit{
+
+}
+
+.BEdit{
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #00ffcc;
+    border: #00ffcc solid 1px;
+    padding-inline: 5px;
+    &:hover{
+        background-color: #00ffcc;
+        color: black;
+    }
+}
+
+.BEliminar{
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #ff0000;
+    border: #ff0000 solid 1px;
+    padding-inline: 5px;
+    &:hover{
+        background-color: #ff0000;
+        color: rgb(0, 0, 0);
+    }
+
+}
+
+#MalditoCanvas{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    #BotonesCanvas{
+        position: absolute;
+        z-index: 999999999;
+        top: 20px;
+
+    }
+    #FondoBlanco{
+        background-color: white;
+        width: 800px;
+        height: 600px;
+        canvas{
+            
+        }
+    }
+    
+    
+    
+}
+
+
+#Ventana{
+    
+    position: absolute;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background:-webkit-linear-gradient(180deg, #ffffff 0%, #b7b7e6 60%, #8066ff 95%);
+    background:-o-linear-gradient(180deg, #ffffff 0%, #b7b7e6 60%, #8066ff 95%);
+    background:-moz-linear-gradient(180deg, #ffffff 0%, #b7b7e6 60%, #8066ff 95%);
+    background:linear-gradient(180deg, #ffffff 0%, #b7b7e6 60%, #8066ff 95%);
+    height: 100%;
+    label{
+        font-weight: bold;
+        font-size: 30px;
+        color:white;
+        text-shadow: rgb(0, 0, 0) 1px 0px 0px, rgb(0, 0, 0) 0.540302px 0.841471px 0px, rgb(0, 0, 0) -0.416147px 0.909297px 0px, rgb(0, 0, 0) -0.989992px 0.14112px 0px, rgb(0, 0, 0) -0.653644px -0.756802px 0px, rgb(0, 0, 0) 0.283662px -0.958924px 0px, rgb(0, 0, 0) 0.96017px -0.279415px 0px;        padding-bottom: 10px;
+    }
+}
+
+#Comprobacion{
+    margin-bottom: 10px;
+}

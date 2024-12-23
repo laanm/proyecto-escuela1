@@ -1,0 +1,727 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    
+    <link rel="stylesheet" href="{% static 'css/matriculas.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+    <script src="/static/js/FileSaver.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+   
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/matriculas/matriculas.js"></script>
+
+    <script type="module" src="https://unpkg.com/read-excel-file@5.5.3/bundle/read-excel-file.min.js"></script>
+    
+
+    <title>Document</title>
+</head>
+<body>
+    
+    {% include 'nav.html' %}
+        <div id="MalditoCanvas">
+            <div id="BotonesCanvas">
+                <button id="CanvasBotonLimpiar" onclick="matriculas.Limpiar()">Borrar Firmas</button>
+                <button id="CanvasBotonTerminar" onclick="matriculas.TerminarFirma()" >Terminar Firmas</button>
+            </div>
+            
+            <div id="FondoBlanco">
+                <canvas id="c" width="800px" height="600px"></canvas>
+            </div>
+            
+        </div>
+        
+        <div id="DivPrincipal">
+            <div id="Botones">
+                <a href="{% url 'RenderMatriculasPublicas' %}"><button class="BotonNormal">Link Re-Matricula</button></a>
+                <button class="BotonNormal" onclick="matriculas.abrirventana()">Importacion Masiva</button>
+                <a href="{% url 'RenderVerMatriculas' %}"><button class="BotonNormal">Ver Matriculas</button></a>
+                <a href="{% url 'RenderVerListaEspera' %}"><button class="BotonNormal">Registro público</button></a>
+            </div>
+
+            
+            <h2>Estudiante</h2>
+        <table id="TablaEstudiante">
+            
+            <tr>
+                <th>Apellido Paterno <label style="color: red;">*</label></th>
+                <td><input id="ApellidoPaterno" type="text"></td>
+                <th>Run Nacional <label style="color: red;">*</label></th>
+                <td><input id="RunNacional" type="text" placeholder="(Si no posee, utilize I.P.A)"></td>
+            </tr>
+            <tr>
+                <th>Apellido Materno <label style="color: red;">*</label></th>
+                <td><input id="ApellidoMaterno" type="text"></td>
+                <th>I.P.A(identificador Provisorio)</th>
+                <td><input id="IPE" type="text" placeholder="(Solo si no tiene Run Nacional)"></td>
+            </tr>
+            
+             <tr>
+                <th>Nombres <label style="color: red;">*</label></th>
+                <td><input id="Nombres" type="text"></td>
+                <th>Nacionalidad</th>
+                <td><select id="Nacionalidad">
+                    <option>Chilena</option>
+                    <option>Argentina</option>
+                    <option>Boliviana</option>
+                    <option>Brasileña</option>
+                    <option>China</option>
+                    <option>Colombiana</option>
+                    <option>Cubana</option>
+                    <option>Dominicana</option>
+                    <option>Ecuatoriana</option>
+                    <option>Española</option>
+                    <option>Haitiana</option>
+                    <option>Mexicana</option>
+                    <option>Panameña</option>
+                    <option>Paraguaya</option>
+                    <option>Peruana</option>
+                    <option>Uruguaya</option>
+                    <option>Venezolana</option>
+                    <option>Otra</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Fecha Nacimiento <label style="color: red;">*</label></th>
+                <td><input id="FechaNacimiento" type="date"></td>
+                <th>Etnia</th>
+                <td><select id="Etnia">
+                        <option>No Pertenece</option>
+                        <option>Atacameño</option>
+                        <option>Aymara</option>
+                        <option>Coyas</option>
+                        <option>Diaguita</option>
+                        <option>Huilliche</option>
+                        <option>Kawesqar</option>
+                        <option>Mapuche</option>
+                        <option>Quechua</option>
+                        <option>Rapa-Nui</option>
+                        <option>Yagan</option>
+                        <option>Otro</option>
+                    </select>
+                </td>
+            </tr>
+            
+             <tr>
+                <th>Domicilio</th>
+                <td><input id="Domicilio" type="text"></td>
+                <th>Religion</th>
+                <td><input id="Religion" type="text"></td>
+            </tr>
+            <tr>
+                <th>Comuna</th>
+                <td><select id="Comuna">
+                        <option>Cerrillos</option>
+                        <option>Cerro Navia</option>
+                        <option>Conchalí</option>
+                        <option>El Bosque</option>
+                        <option>Estacion Central</option>
+                        <option>Huechuraba</option>
+                        <option>Independencia</option>
+                        <option>La Cisterna</option>
+                        <option>La Florida</option>
+                        <option>La Granja</option>
+                        <option>La Pintana</option>
+                        <option>La Reina</option>
+                        <option>Las Condes</option>
+                        <option>Lo Barnechea</option>
+                        <option>Lo Espejo</option>
+                        <option>Lo Prado</option>
+                        <option>Macul</option>
+                        <option>Maipú</option>
+                        <option>Ñuñoa</option>
+                        <option>Pedro Aguirre Cerda</option>
+                        <option>Peñalolen</option>
+                        <option>Providencia</option>
+                        <option>Pudahuel</option>
+                        <option>Puente Alto</option>
+                        <option>Quilicura</option>
+                        <option>Quinta Normal</option>
+                        <option>Recoleta</option>
+                        <option>Renca</option>
+                        <option>San Miguel</option>
+                        <option>San Joaquín</option>
+                        <option>San Ramón</option>
+                        <option>Santiago</option>
+                        <option>Vitacura</option>
+                    </select>
+                </td>
+                <th>Sexo</th>
+                <td><select id="Sexo">
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option>Otros</option>
+                    </select>
+                </td>
+            </tr>
+            
+             <tr>
+                <th>Telefono</th>
+                <td><input id="Telefono" type="number"></td>
+                <th>Edad <label style="color: red;">*</label></th>
+                <td><input id="Edad" type="Number"></td>
+            </tr>
+            <tr>
+                <th>Vive Con</th>
+                <td><select id="ViveCon">
+                        <option>Madre</option>
+                        <option>Padre</option>
+                        <option>Ambos Padres</option>
+                        <option>Tio/a</option>
+                        <option>Abuelo/a Paterno</option>
+                        <option>Abuelo/a Materno</option>
+                        <option>Hermano/a</option>
+                        <option>Tutor Legal</option>
+                        <option>Casa de acogida</option>
+                        <option>Hogar de menores</option>
+                        <option>Otro</option>
+                    </select>
+                </td>
+                <th>Curso de Matriculacion</th>
+                <td><select id="CursoNuevo"><option>vincular a cursos</option></select></td>
+            </tr>
+            
+            <tr>
+                <th>Quien Matricula</th>
+                <td><select id="QuienMatricula">
+                        <option value="Madre">Madre</option>
+                        <option value="Padre">Padre</option>
+                        <option value="Tio/a">Tio/a</option>
+                        <option value="Abuelo/a Materno">Abuelo/a Materno</option>
+                        <option value="Abuelo/a Paterno">Abuelo/a Paterno</option>
+                        <option value="Hermano/a">Hermano/a (Mayor de edad)</option>
+                        <option value="Tutor Legal">Tutor Legal</option>
+                    </select>
+                </td>
+                <th>Estudiante</th>
+                <td>
+                    <select id="EstudianteNuevo">
+                        <option value="Nuevo">Nuevo</option>
+                        <option value="Viejo">Viejo</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Sistema de matricula</th>
+                <td><select id="SistemaDeMatricula">
+                        <option value="Alumno Antiguo">Alumno Antiguo</option>
+                        <option value="SAE">SAE</option>
+                        <option value="Registro Público">Registro Público</option>
+                    </select>
+                </td>
+                <th>Correo Institucional</th>
+                <td><input id="CorreoInstitucional" type="text"></td>
+            </tr>
+            
+        </table>
+
+        <h2>Antecedentes Familiares</h2>
+        <h3>Padre</h3>
+        <table id="TablaPadre">
+            
+            
+            <tr>
+                <th>Apellidos</th>
+                <td><input id="PadreApellidos" type="text" onchange="matriculas.Limpiar()"></td>
+                <th>R.U.N</th>
+                <td><input id="PadreRun" type="text" placeholder="(Si no posee, utilize I.P.A)"></td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td><input id="PadreNombres" type="text" onchange="matriculas.Limpiar()"></td>
+                <th>I.P.A</th>
+                <td><input id="PadreIpa" type="text" placeholder="(Si no posee, utilize Pasaporte)"></td>
+            </tr>
+            
+            <tr>
+                <th>Nacionalidad</th>
+                <td><select id="PadreNacionalidad">
+                        <option>Chilena</option>
+                        <option>Argentina</option>
+                        <option>Boliviana</option>
+                        <option>Brasileña</option>
+                        <option>China</option>
+                        <option>Colombiana</option>
+                        <option>Cubana</option>
+                        <option>Dominicana</option>
+                        <option>Ecuatoriana</option>
+                        <option>Española</option>
+                        <option>Haitiana</option>
+                        <option>Mexicana</option>
+                        <option>Panameña</option>
+                        <option>Paraguaya</option>
+                        <option>Peruana</option>
+                        <option>Uruguaya</option>
+                        <option>Venezolana</option>
+                        <option>Otra</option>
+                    </select>
+                </td>
+                <th>N° Pasaporte</th>
+                <td><input id="PadrePasaporte" type="text"></td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td><input id="PadreDomicilio" type="text"></td>
+                <th>Estudios</th>
+                <td><select id="PadreEstudios">
+                        <option>ED. Básico Incompleto</option>
+                        <option>ED. Básico Completo</option>
+                        <option>ED. Media Incompleto</option>
+                        <option>ED. Media Completo</option>
+                        <option>ED. Técnico Profesional Incompleta</option>
+                        <option>ED. Técnico Profesional Completa</option>
+                        <option>ED. Universitaria Incompleta</option>
+                        <option>ED. Universitaria Completa</option>
+                        <option>Bachillerato</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Comuna</th>
+                <td><select id="PadreComuna">
+                        <option>Cerrillos</option>
+                        <option>Cerro Navia</option>
+                        <option>Conchalí</option>
+                        <option>El Bosque</option>
+                        <option>Estacion Central</option>
+                        <option>Huechuraba</option>
+                        <option>Independencia</option>
+                        <option>La Cisterna</option>
+                        <option>La Florida</option>
+                        <option>La Granja</option>
+                        <option>La Pintana</option>
+                        <option>La Reina</option>
+                        <option>Las Condes</option>
+                        <option>Lo Barnechea</option>
+                        <option>Lo Espejo</option>
+                        <option>Lo Prado</option>
+                        <option>Macul</option>
+                        <option>Maipú</option>
+                        <option>Ñuñoa</option>
+                        <option>Pedro Aguirre Cerda</option>
+                        <option>Peñalolen</option>
+                        <option>Providencia</option>
+                        <option>Pudahuel</option>
+                        <option>Puente Alto</option>
+                        <option>Quilicura</option>
+                        <option>Quinta Normal</option>
+                        <option>Recoleta</option>
+                        <option>Renca</option>
+                        <option>San Miguel</option>
+                        <option>San Joaquín</option>
+                        <option>San Ramón</option>
+                        <option>Santiago</option>
+                        <option>Vitacura</option>
+                    </select>
+                </td>
+                <th>Ocupacion</th>
+                <td><input id="PadreOcupacion" type="text"></td>
+            </tr>
+            <tr>
+                <th>Telefono 1</th>
+                <td><input id="PadreTelefono1" type="number"></td>
+                <th>Apoderado</th>
+                <td><select id="PadreApoderado">
+                        <option>Titular</option>
+                        <option>Suplente</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <th>Telefono 2</th>
+                <td><input id="PadreTelefono2" type="number"></td>
+                <th>E-Mail</th>
+                <td><input id="PadreEmail" type="text"></td>
+            </tr>
+        </table>
+        <h3>Madre</h3>
+        <table id="TablaMadre">
+            
+            <tr>
+                <th>Apellidos</th>
+                <td><input id="MadreApellidos" type="text" onchange="matriculas.Limpiar()"></td>
+                <th>R.U.N</th>
+                <td><input id="MadreRun" type="text" placeholder="(Si no posee, utilize I.P.A)"></td>
+            </tr>
+            <tr>
+                <th>Nombres</th>
+                <td><input id="MadreNombres" type="text" onchange="matriculas.Limpiar()"></td>
+                <th>I.P.A</th>
+                <td><input id="MadreIpa" type="text" placeholder="(Si no posee, utilize pasaporte)"></td>
+            </tr>
+            
+            <tr>
+                <th>Nacionalidad</th>
+                <td><select id="MadreNacionalidad">
+                    <option>Chilena</option>
+                    <option>Argentina</option>
+                    <option>Boliviana</option>
+                    <option>Brasileña</option>
+                    <option>China</option>
+                    <option>Colombiana</option>
+                    <option>Cubana</option>
+                    <option>Dominicana</option>
+                    <option>Ecuatoriana</option>
+                    <option>Española</option>
+                    <option>Haitiana</option>
+                    <option>Mexicana</option>
+                    <option>Panameña</option>
+                    <option>Paraguaya</option>
+                    <option>Peruana</option>
+                    <option>Uruguaya</option>
+                    <option>Venezolana</option>
+                    <option>Otra</option>
+                </select></td>
+                <th>N° Pasaporte</th>
+                <td><input id="MadrePasaporte" type="text"></td>
+            </tr>
+            <tr>
+                <th>Domicilio</th>
+                <td><input id="MadreDomicilio" type="text"></td>
+                <th>Estudios</th>
+                <td><select id="MadreEstudios">
+                    <option>ED. Básico Incompleto</option>
+                    <option>ED. Básico Completo</option>
+                    <option>ED. Media Incompleto</option>
+                    <option>ED. Media Completo</option>
+                    <option>ED. Técnico Profesional Incompleta</option>
+                    <option>ED. Técnico Profesional Completa</option>
+                    <option>ED. Universitaria Incompleta</option>
+                    <option>ED. Universitaria Completa</option>
+                    <option>Bachillerato</option>
+                </select></td>
+            </tr>
+            
+            <tr>
+                <th>Comuna</th>
+                <td><select id="MadreComuna">
+                    <option>Cerrillos</option>
+                    <option>Cerro Navia</option>
+                    <option>Conchalí</option>
+                    <option>El Bosque</option>
+                    <option>Estacion Central</option>
+                    <option>Huechuraba</option>
+                    <option>Independencia</option>
+                    <option>La Cisterna</option>
+                    <option>La Florida</option>
+                    <option>La Granja</option>
+                    <option>La Pintana</option>
+                    <option>La Reina</option>
+                    <option>Las Condes</option>
+                    <option>Lo Barnechea</option>
+                    <option>Lo Espejo</option>
+                    <option>Lo Prado</option>
+                    <option>Macul</option>
+                    <option>Maipú</option>
+                    <option>Ñuñoa</option>
+                    <option>Pedro Aguirre Cerda</option>
+                    <option>Peñalolen</option>
+                    <option>Providencia</option>
+                    <option>Pudahuel</option>
+                    <option>Puente Alto</option>
+                    <option>Quilicura</option>
+                    <option>Quinta Normal</option>
+                    <option>Recoleta</option>
+                    <option>Renca</option>
+                    <option>San Miguel</option>
+                    <option>San Joaquín</option>
+                    <option>San Ramón</option>
+                    <option>Santiago</option>
+                    <option>Vitacura</option>
+                </select>
+                </td>
+                <th>Ocupacion</th>
+                <td><input id="MadreOcupacion" type="text"></td>
+            </tr>
+            <tr>
+                <th>Telefono 1</th>
+                <td><input id="MadreTelefono1" type="number"></td>
+                <th>Apoderado</th>
+                <td><select id="MadreApoderado">
+                    <option>Titular</option>
+                    <option>Suplente</option>
+                </select></td>
+            </tr>
+            
+            <tr>
+                <th>Telefono 2</th>
+                <td><input id="MadreTelefono2" type="number"></td>
+                <th>E-Mail</th>
+                <td><input id="MadreEmail" type="text"></td>
+            </tr>
+        </table>
+
+        <h2>Antecedentes Academicos</h2>
+        <h3></h3>
+        <table id="TablaAntecedentesAcademicos">
+            <tr>
+                <th>Establecimiento de procedencia</th>
+                <td colspan="3"><input id="EstablecimientoProcedencia" type="text" placeholder="Si Estudiante es extranjero se registra solo el pais de procedencia"></td>
+            </tr>
+            <tr>
+                <th>Ultimo Año cursado</th>
+                <td colspan="3"><select id="UltimoYearCursado">
+                    <option value="Pre-Kinder">Pre-Kinder</option>
+                    <option value="Kinder">Kinder</option>
+                    <option value="1° Básico">1° Básico</option>
+                    <option value="2° Básico">2° Básico</option>
+                    <option value="3° Básico">3° Básico</option>
+                    <option value="4° Básico">4° Básico</option>
+                    <option value="5° Básico">5° Básico</option>
+                    <option value="6° Básico">6° Básico</option>
+                    <option value="7° Básico">7° Básico</option>
+                    <option value="8° Básico">8° Básico</option>
+                    <option value="1° Medio">1° Medio</option>
+                    <option value="2° Medio">2° Medio</option>
+                    <option value="3° Medio">3° Medio</option>
+                    <option value="4° Medio">4° Medio</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Ultimo Curso repetido</th>
+                <td colspan="3"><select id="CursosRepetidos">
+                        <option value="Ninguno">Ninguno</option>
+                        <option value="Pre-Kinder">Pre-Kinder</option>
+                        <option value="Kinder">Kinder</option>
+                        <option value="1° Básico">1° Básico</option>
+                        <option value="2° Básico">2° Básico</option>
+                        <option value="3° Básico">3° Básico</option>
+                        <option value="4° Básico">4° Básico</option>
+                        <option value="5° Básico">5° Básico</option>
+                        <option value="6° Básico">6° Básico</option>
+                        <option value="7° Básico">7° Básico</option>
+                        <option value="8° Básico">8° Básico</option>
+                        <option value="1° Medio">1° Medio</option>
+                        <option value="2° Medio">2° Medio</option>
+                        <option value="3° Medio">3° Medio</option>
+                        <option value="4° Medio">4° Medio</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Pertenece al proyecto de integracion escolar(PIE)</th>
+                <td colspan="3"><select id="PerteneceIntegracionEscolar">
+                    
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Opta por religion</th>
+                <td><select id="OptaReligion">
+                        <option>Si</option>
+                        <option>No</option>
+                    </select>
+                </td>
+                <th>Opta por un credo</th>
+                <td><select id="OptaCredo">
+                        <option>Católica</option>
+                        <option>Evangélica</option>
+                        <option>Mormón</option>
+                        <option>Testigo de jehova</option>
+                        <option>Ninguna</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <h2>Antecedentes Sociales</h3>
+
+        <table id="AntecedentesSociales">
+            
+
+            <tr>
+                <th>Pertenece a algun programa social</th>
+                <td><select id="PerteneceProgramaSocial">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+                <th>Prioritario</th>
+                <td><select id="Prioritario">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Beca indigena</th>
+                <td><select id="BecaIndigena">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+                <th>Preferente</th>
+                <td><select id="Preferente">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th>Otra Beca</th>
+                <td><select id="OtraBeca">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+                <th>Registro social de hogares</th>
+                <td><select id="RegistroSocial">
+                    <option>No</option>
+                    <option>Si</option>
+                </select></td>
+            </tr>
+        </table>
+
+        <h2>Antecedentes de salud</h2>
+
+        <table id="AntecendesDeSalud">
+            
+            <tr>
+                <th>Sistema de salud</th>
+                <td><select id="SistemaSalud">
+                        <option>Fonasa Letra A</option>
+                        <option>Fonasa Letra B</option>
+                        <option>Fonasa Letra C</option>
+                        <option>Fonasa Letra D</option>
+                        <option>Isapre</option>
+                        <option>No tiene</option>
+                        <option>No sabe</option>
+                        <option>Otra</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Consultorio o cesfam</th>
+                <td><select id="ConsultorioCesfam">
+                        <option>No esta Inscrito en CESFAM</option>
+                        <option>CESFAM N°5</option>
+                        <option>CESFAM Las Mercedes</option>
+                        <option>CESFAM Padre Vicente Irarrázabal(Ex-Nogales)</option>
+                        <option>CESFAM San José De Chuchunco</option>
+                        <option>Otro CESFAM</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Su hija tiene algun diasgnostico medico o impedimiento</th>
+                <td><select id="DiagnosticoMedico">
+                        <option>No</option>
+                        <option>Si</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Tiene alguna enfermedad cronica</th>
+                <td><input id="EnfermedadCronica" type="text" placeholder="En caso de tener, escribirla aqui. De lo contrario escribir 'No'"></td>
+            </tr>
+            <tr>
+                <th>Alergico</th>
+                <td><input id="Alergico" type="text" placeholder="En caso de tener, escribirla aqui. De lo contrario escribir 'No'"></td>
+            </tr>
+            <tr>
+                <th>Toma algun medicamento</th>
+                <td><input id="Medicamento" type="text" placeholder="En caso de tener, escribirla aqui. De lo contrario escribir 'No'"></td>
+            </tr>
+            <tr>
+                <th>En caso de emergencia comunicarse con</th>
+                <td><input id="CasoEmergencia" type="text"></td>
+            </tr>
+        </table>
+        <h2>Documentacion</h2>
+
+        <table id="TableDocumentacion">
+            
+            <tr>
+                <th>Conozco y acepto el reglamento interno del establecimiento</th>
+                <td><input id="AceptoReglamentoInterno" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Conozco y acepto el reglamento de evaluacion del establecimiento</th>
+                <td><input id="AceptoReglamentoEvaluacion" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Tomo conocimiento de registro de huella para fines de registro de horario de llegada al establecimiento</th>
+                <td><input id="AceptoHuella" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Encuesta para la asistencia de su pupilo/a a la asignatura de religion</th>
+                <td><input id="AceptoReligion" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Tomo conocimiento de los protocolos contra el covid-19</th>
+                <td><input id="AceptoProtocolo19" type="checkbox"></td>
+            </tr>
+
+            </table>
+
+            <h2>Deberes y compromisos</h2>
+            <table id="TablaDeberes">
+        
+            <tr>
+                <th>Asistir a todas las reuniones, citaciones o llamadas que realice los profesores y/o directivos
+                    en relacion a mi pupilo/a
+                </th>
+                <td><input id="AsistirReuniones" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Cumplir los horarios de entrada y salida establecidos por el liceo</th>
+                <td><input id="CumplirHorarios" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>justificar las inasistencias de mi pupilo/a con documentos pertinentes</th>
+                <td><input id="JustificarInasistencias" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Revisar y responder la informacion que envie el establecimiento en los diferentes medios de comunicacion establecida</th>
+                <td><input id="RevisarInfo" type="checkbox"></td>
+            </tr>
+            <tr>
+                <th>Participa activamente en las diferentes actividades programadas por el establecimiento</th>
+                <td><input if="ParticiparActivamente" type="checkbox"></td>
+            </tr>
+        </table>
+        <div id="TablasPersonalizadas">
+
+        </div>
+        <div id="Personalizado">
+
+        </div>
+        
+        <div id="Firma" style="width:384px ; height:216px; border: 1px solid black;">
+            <canvas id="xfr" width="384px" height="216px"></canvas>
+        </div>
+            
+            <div style="margin-top: 10px; margin-bottom: 10px;">
+                <!--<button class="BotonNormal" style="margin-right: 20px;" onclick="matriculas.ventanaagregarfirma()">Firmar</button>-->
+                <button class="BotonNormal" onclick="matriculas.crearmatricula()">Crear Matricula</button>
+                
+            </div>
+
+        </div>
+
+        
+        <div id="Ventana">
+            
+        </div>
+        <div id="Menu">
+            <h2>Menu de planilla</h2>
+            <button onclick="matriculas.crearseccion()">Aplicar Cambios</button>
+            <button onclick="">Salir del editor</button>
+        </div>
+        <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+        const matriculas= new javamatriculas("{{request.session.usuario.id}}") 
+
+       //https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+        
+       
+    </script>
+</body>
+</html>

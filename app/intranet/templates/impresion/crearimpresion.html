@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/crearimpresion.css' %}">
+
+    <title>Impresion</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div id="divImpresion">
+        <form action="{% url 'CrearImpresion' %}" method="POST" enctype="multipart/form-data" onsubmit="onFormSumbit(event)">
+            {% csrf_token %}
+
+            <label>Datos Profesor: </label>
+            <select name="profesor" required>
+
+                    <option value="{{Profesor.id}}">{{Profesor.user}}</option>
+
+            </select>
+
+            <label>Curso Destinado: </label>
+
+            <select name="curso" id="cursos" required>
+                    <option value="">Seleccionar</option>
+                    {%for C in Curso%}
+                        <option value="{{C.id}}">{{C.nombre}}</option>
+                    {%endfor%}
+            </select>
+
+            <label>Asignatura: </label>
+
+            <select name="asignatura" id="asignaturas" required>
+                    <option value="">Seleccionar</option>
+                    {%for A in Asignatura %}
+                        <option value="{{A.idasignatura.id}}">{{A.idasignatura}}</option>
+                    {%endfor%}
+            </select>
+
+            <input type="file" name="archivo"  required id="archivo">
+
+            
+            <label>Numero de Copias: </label>
+
+            <input type="number" min="1" max="50" name="hojas" id="hojas" required>
+
+            <button id="CrearPeticion" type="submit">Crear Solicitud</button>
+
+        </form>
+    </div>
+    
+    <div class="VentanaCargar invisible" id="cargador">
+        
+        <div class="preloader">
+            
+        </div>
+        
+    </div>
+
+    <script>
+            function onFormSumbit(event){
+                event.preventDefault();
+                //document.getElementById('mi_elemento').classList.remove('quitar_esta_clase', 'quitar_esta_clase_tambien');
+
+                var formData = new FormData();
+                document.getElementById("cargador").classList.remove("invisible");
+                texto= document.getElementById("textosubir");
+
+                formData.append("profesor","{{request.session.usuario.id}}");
+                formData.append("curso",document.getElementById("cursos").value);
+                formData.append("asignatura",document.getElementById("asignaturas").value);
+                formData.append("hojas",document.getElementById("hojas").value);
+                formData.append("archivo",document.getElementById("archivo").files[0]);
+                formData.append("csrfmiddlewaretoken","{{ csrf_token }}");
+                console.log(formData);
+
+                var xhr= new XMLHttpRequest();
+                
+                xhr.open("POST","/FormularImpresion/",true);
+                xhr.upload.addEventListener("progress", function (ev){
+                    console.log("awa");
+                    console.log(ev.lengthComputable);
+                    if (ev.lengthComputable){
+                        texto.innerHTML=parseInt(ev.loaded/1000000)+" MB de "+parseInt(ev.total/1000000)+"MB";
+
+                    }
+
+                });
+                xhr.send(formData)
+
+                xhr.onload = function(){
+                    if(this.status== 200){
+                        window.location.replace("/VistaProfesor/");
+                    }
+                }
+                
+
+
+
+            }
+
+    </script>    
+    
+</body>
+</html>

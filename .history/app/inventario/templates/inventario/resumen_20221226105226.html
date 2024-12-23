@@ -1,0 +1,19 @@
+{% extends "inventario/master.html" %}
+{% load static %}
+{% block titulo %}Resumen{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'inventario/js/resumen.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div id="graficos"></div>
+{% endblock %}
+
+{% block footer %}
+<script>
+    $(document).ready(function(){
+        resumen.init();
+    });
+</script>
+{% endblock %}

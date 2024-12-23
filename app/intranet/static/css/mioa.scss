@@ -1,0 +1,270 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+}
+
+#Botones{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+}
+#Asignaturas{
+    width: 97%;
+    
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    h2{
+        width: 100%;
+        text-align: center;
+    }
+    button{
+        margin-left: 2px;
+        margin-bottom: 2px;
+    }
+}
+
+#Cursos{
+    width: 97%;
+    
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    h2{
+        width: 100%;
+        text-align: center;
+    }
+    button{
+        margin-left: 2px;
+        margin-bottom: 2px;
+    }
+}
+
+#Items{
+    width: 97%;
+    
+    
+    border-radius: 10px;
+    .TrueItem{
+        position: relative;
+        width: 100%;
+        margin-bottom: 10px;
+        background-color: white;
+        .Oculto{
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 85, 197, 0.774);
+            opacity: 0;
+            &:hover{
+                opacity: 1;
+            }
+        }
+        h4{
+            background-color: #005895;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+        &:hover{
+            filter: brightness(1.2);
+        }
+    }
+}
+.Asignaturas{
+    width: 10vw;
+    background-color: aqua;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.507);
+-webkit-box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: -2px 2px 19px -2px rgba(0, 0, 0, 0.514);
+    &:hover{
+        background-color: rgb(110, 255, 255);
+    }
+    
+}
+
+
+#Ventana{
+    
+    #Contenido{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        width: 95%;
+        height: 100%;
+        textarea{
+            width: 80%;
+            height: 25%;
+        }
+        input[type="text"]{
+            width: 80%;
+        }
+        
+    }
+    h2{
+        padding-top: 10px;
+        padding-bottom: 5px;
+        text-align: center;
+        
+    }
+    
+    #parte1{
+        background-color: rgb(0, 207, 207);
+        border: 2px solid rgb(0, 207, 207);
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        color: black;
+        display: flex;
+        
+        border-radius: 5px;
+    }
+    #parte2{
+        border: 2px solid rgb(0, 233, 0);
+        background-color: rgb(223, 223, 223);
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+
+    }
+    #parte3{
+        border: 2px solid rgb(255, 0, 221);
+        background-color: rgb(223, 223, 223);
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+       
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+
+    }
+    #parte4{
+        border: 2px solid rgb(0, 26, 255);
+        background-color: rgb(223, 223, 223);
+        width: 100%;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
+       
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+
+    }
+    
+    
+    button{
+        margin-top: 10px;
+    }
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        th{
+            color: white;
+            text-align: center;
+            background-color: #34495e;;
+        }
+        td{
+            text-align: center;
+            min-height: 50px;
+            height: 100px;
+            textarea{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 5vw;
+    
+    }
+}
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:5vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:5vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+#Cerrar{
+    position: absolute;
+    left:10px;
+    width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+
+.tox-tinymce{
+    
+    width: 95% !important;
+    
+}
+
+.Seleccionado{
+    background-color: aqua !important;
+}

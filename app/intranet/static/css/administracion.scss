@@ -1,0 +1,32 @@
+#divAdministracion{
+    padding-top: 10vh;
+    height: 80vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        max-width: 70%;
+        min-width: 50%;
+        padding: 5px;
+        height: fit-content;
+        background-color: #34495e;
+        text-decoration: none;
+        font-size: x-large;
+        color: #00ffcc;
+        transition: 0.5s;
+        text-align: center;
+        border-radius: 5px;        
+    }
+    a:hover{
+        background-color: #00ffcc;
+        color: black;
+    }
+
+    
+    
+}
+
+

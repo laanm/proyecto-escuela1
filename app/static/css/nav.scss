@@ -1,0 +1,464 @@
+@font-face{
+    font-family: "Mulish";
+    src: url("/static/Mulish/Mulish-VariableFont_wght.ttf")
+}
+
+*{
+    font-family: "Mulish";
+    padding: 0;
+    margin: 0;
+}
+
+.OverFlowNav{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 93vh;
+    
+    &:hover{
+        overflow-y: visible;
+    }
+    &::-webkit-scrollbar{
+    width: 7px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #34495e;
+        
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #005895; 
+        border-radius: 5px;
+    }
+}
+
+
+
+.nav {
+    
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    
+
+    ul{
+        
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+         
+        
+        list-style: none; 
+
+        a{
+            position: relative;
+            width: max-content;
+            display: flex;
+            align-items: center;
+            float: left;
+            margin: 10px;
+            transition: 0.2s;
+            
+            border-radius: 5px;
+            margin-top: 0.4vh;
+            margin-bottom: 0.4vh;
+            padding-left: 1vw;
+            text-decoration: none;
+            font-size: 20px;
+            color: #005895;
+            width: 24vw;
+            i{
+                position: relative;
+                left: 0px;
+                padding-right: 1.5vw;
+                color: #005895;
+                
+            }
+            
+            li{
+                width: 100%;
+                margin-left: 5px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 15px;
+                white-space: nowrap;
+                
+                
+            }
+            &:hover{
+                i{
+                    color: white;
+                }
+                transform: scale(1.05);
+                background-color: #53AF09;
+                color: white;
+            }
+        }
+        a:first-child{
+            margin-top: 10px;
+        }
+    }
+
+    
+    @media only screen and (max-width: 768px) {
+        
+        width: 95vw;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        
+        ul{
+            padding-left: 40px;
+            a{
+                width: 85vw;
+            }
+        }
+    
+    }
+}
+
+#Sesion{
+    display: flex;
+    
+    height: 8vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #006FBB; 
+    
+    
+    transition: 0.2s;
+    
+    label{
+        display: none;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+    }
+    a{
+        display: none;
+        text-align: center;
+        
+        font-weight: bold;
+        text-decoration: none;
+        color: #00ffcc;
+    }
+    &:hover{
+        background-color: black;
+        
+    }
+    @media only screen and (max-width: 768px) {
+        
+       width: 20vw;
+        label{
+            font-size: 15px;
+        }
+    
+    }
+
+}
+
+#Brutal{
+    position: fixed;
+    z-index: 2000;
+    width: 5vw;
+    left:0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #34495e;
+    
+
+    transition: all .5s;
+    -moz-transition: all .5s;
+    -webkit-transition:all .5s;
+    -o-transition: all .5s;
+    
+    overflow: hidden;
+    @media only screen and (max-width: 1300px) {
+        #Sesion{
+            background-color: red;
+        }
+        &:hover{
+        width: 20vw;
+        
+        #Sesion{
+            
+            width: 20vw;
+           
+            label,a{
+                display: inline-block;
+            }
+            
+        }
+        
+     }
+ 
+    }
+
+    @media only screen and (max-width: 1850px) {
+        #Sesion{
+            background-color: blue;
+        }
+        &:hover{
+        width: 20vw;
+        
+        #Sesion{
+            
+            width: 20vw;
+           
+            label,a{
+                display: inline-block;
+            }
+            
+        }
+        
+     }
+ 
+    }
+    
+ 
+    
+
+}
+
+.abrirmenumovilxd{
+    animation-name: abrirmenumovil;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes abrirmenumovil{
+    0%{
+        top: 100vh;
+    }
+    100%{
+        top: 0;
+    }
+}
+.cerrarmenumovilxd{
+    animation-name: cerrarmenumovil;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes cerrarmenumovil{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 110vh;
+    }
+}
+
+#BotonMenuMovil{
+
+    display: none;
+    @media only screen and (max-width: 768px) {
+        display: block;
+        position: fixed;
+        z-index: 2001;
+        bottom: 0;
+        width: 30vw;
+        height: 5vh;
+        left: 35vw;
+        button{
+            width: 100%;
+            background-color: #34495e;
+            color: #00ffcc;
+            font-weight: bold;
+            font-size: large;
+            border: solid 1px black;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            
+        }
+     }
+}
+
+body{
+    
+    @media only screen and (min-width: 768px) {
+        padding-left: 5vw;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 100vw !important;
+        padding-left: 0;
+        div{
+            width: 100vw;
+        }
+    }
+}
+
+//efecto cargando global xd
+#Cargando{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+#VerTodo{
+    width: 140px;
+    height: 45px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #000000;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    margin: 10px;
+}
+
+
+//VENTANA GLOBAL
+#Ventana{
+    
+    position: fixed;
+    background-color: white;
+    top: 200vh;
+    left: 7.5vw;
+    height: 90vh;
+    width: 90vw;
+    z-index: 1000;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+#Cerrar{
+    position: relative;
+    left:10px;
+    top:10px;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    
+    @keyframes AnimSubirVentana{
+    0%{
+        top:200vh;
+        
+    }
+    100%{
+        top:5vh;
+    }   
+    }
+
+    .CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    }
+    @keyframes AnimCerrarVentana{
+    0%{
+        top:5vh;
+    }
+    100%{
+        top:200vh;
+    }
+    }
+//ESTILOS GLOBALES NUEVOS
+.BotonNormal{
+    border-radius: 5px;
+    background-color: #53AF09;
+    color: #FFFFFF;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    border: 0;
+    width: fit-content;
+    height: 30px;
+    transition-duration: 0.2s;
+    padding-left: 2px;
+    padding-right: 2px;
+    &:hover{
+        background-color: #438d07;
+    }
+}
+.BotonSmall{
+    border-radius: 5px;
+    background-color: #53AF09;
+    color: #FFFFFF;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: medium;
+    border: 0;
+    width: fit-content;
+    height: fit-content;
+    transition-duration: 0.2s;
+    padding-left: 2px;
+    padding-right: 2px;
+    &:hover{
+        background-color: #438d07;
+    }
+}
+
+.BarraSuperior{
+    display: flex;
+    align-items: center;
+    background-color: #005895;
+    height: 8vh;
+    width: 100%;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 6vh;
+    line-height: 60px;
+    color: #FFFFFF;
+    padding-left: 1%;
+}

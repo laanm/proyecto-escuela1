@@ -1,0 +1,324 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+}
+#Menu2{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.3125em;
+    *{
+        margin-right: 5px;
+    }
+}
+#Calendario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    table{
+        border: 1px solid black;
+        width: 80%;
+        height: 80%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        background-color: rgba(128, 128, 128, 0.295);
+        th{
+            background-color: white;
+            border-bottom: 1px solid black;
+        }
+        td:hover{
+            background-color: aqua;
+            
+        }
+        td{
+            text-align: center;
+            font-size: xx-large;
+            min-height: 20%;
+            height: 20%;
+            font-weight: bold;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        tr{
+            white-space: nowrap;
+        }
+    }
+}
+#BCrear{
+
+}
+#Menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.Laboral{
+    background-color: rgb(0, 140, 255);
+}
+.Feriado{
+    background-color: red;
+    color: white;
+}
+.No{
+    border: 0 !important;
+    &:hover{
+        background-color: gray !important;
+    }
+}
+
+.flecha1{
+    
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+    margin-bottom: 5px;
+    &:hover{
+        
+        transform: scale(1.1) rotate(180deg);
+        filter: brightness(1.2);
+    }
+}
+.flecha2{
+    width: 50px;
+    height: 50px;
+    padding-bottom: 3px;
+    &:hover{
+        
+        transform: scale(1.1);
+        filter: brightness(1.2);
+    }
+}
+#Ventana{
+    position:fixed;
+    width: 50%;
+    height: 100vh;
+    max-height: 100vh;
+    left:50vh;
+    top: 5000px;
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    
+    
+        
+    
+    
+    button{
+        margin-top: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 5vw;
+    
+    }
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:10vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:10vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+.Seleccionardias{
+    
+    animation-name: selecdias;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    
+}
+@keyframes selecdias{
+    0%{
+        background-color: white;
+       
+    }
+    50%{
+            background-color: #04ebbd;
+    }
+    100%{
+        //width: fit-content;
+        background-color: white;
+    }
+}
+
+#Contenido{
+    width: 95%;
+    display: flex;
+    max-height: 90vh;
+    align-items: center;
+    flex-direction: column;
+    
+    textarea{
+        height: 100px;
+        resize: none;
+        align-content: center;
+        text-align: left;
+    }
+
+    input[type="text"]{
+        width: 60%;
+    }
+    h2,h3{
+        margin-top: 10px;
+        text-align: center;
+    }
+    label{
+        text-align: center;
+    }
+    select,textarea{
+        text-align: center;
+        width: 60%;
+        margin-bottom: 5px;
+    }
+    
+    table{
+        margin-top: 10px;
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        border: 1px solid #296d74;
+        background-color: white;
+        color: black;
+        tr{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            white-space: nowrap;
+    
+            th{
+                min-width: 50px;
+                width: 50px;
+                flex-grow: 1;
+                font-size: 20px;
+                text-align: center;
+                background-color: #34495e;
+                color:white;
+                
+            }
+            td{
+                
+                
+                width: 100%;
+                min-width: 50px;
+                flex-grow: 1;
+                transition: 0.3s;
+                display: flex;
+                font-weight: bold;
+                
+                align-content: center;
+                justify-content: center;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                button{
+                    margin: 0;
+                }
+            }
+        }
+        
+    }
+    div{
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        
+    }
+}
+
+#Cerrar{
+    position: absolute;
+    left:10px;
+    width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+
+.TituloEvento{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(0, 199, 33);
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+
+.Seleccionados{
+    
+    animation-name: Seleccionados;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+@keyframes Seleccionados{
+    0%{
+        background-color: green;
+    }
+    50%{
+        background-color: rgb(0, 238, 0);
+    }
+    100%{
+        background-color: green;
+    }
+}
+
+.fa-2x1{
+    line-height: 0 !important;
+}

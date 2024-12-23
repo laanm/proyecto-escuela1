@@ -1,0 +1,405 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+}
+#DivGeneral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#Tabla{
+    margin-top: 5px;
+    width: 90%;
+    @media only screen and (max-width: 768px) {
+        width: 98%;
+        
+    }
+}
+
+.BarraSuperior{
+    @media only screen and (max-width: 768px) {
+        label{
+            display: none;
+        }
+        .BotonNormal{
+            font-size: 14px !important;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0 !important;
+        
+    }
+}
+
+.Item{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    .Oculto{
+        background-color: rgba(0, 85, 197, 0.637);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 30vh;
+        left: 0;
+        min-width: 13vw;
+        max-width: 13vw;
+        opacity: 0;
+        transition: 0.1s;
+        @media only screen and (max-width: 768px) {
+            min-width: 25vw;
+            max-width: 25vw;
+            
+        }
+        button{
+            margin-right: 0 !important;
+            width: 90% !important;
+            font-size: medium;
+        }
+        &:hover{
+            
+            opacity: 1;
+        }
+        h2{
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .Imagen{
+        min-height: 30vh;
+        max-height: 30vh;
+        min-width: 13vw;
+        max-width: 13vw;
+        object-fit: cover;
+        @media only screen and (max-width: 768px) {
+            min-width: 25vw;
+            max-width: 25vw;
+            
+        }
+    }
+    .Titulo{
+        display: flex;
+        
+        label{
+            width: 100% !important;
+            text-align: start !important;
+        }
+        select{
+            width: fit-content !important;
+        }
+    }
+    .Informacion{
+        
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        h4{
+            
+            min-width: 10vw;
+            background-color: #006FBB;
+            color: white;
+            text-align: center;
+            
+        }
+        label,select{
+            width: 25%;
+            text-align: center;
+        }
+
+        .Info{
+            display: flex;
+           
+        }
+        .TripleInfo{
+            display: flex;
+        }
+        .DobleInfo{
+            display: flex;
+            h4{
+                width: fit-content;
+            }
+            label{
+                width:fit-content;
+                text-align: center;
+            }
+            select{
+                width: fit-content !important;
+            }
+            
+        }
+        .TripleInfo:nth-child(even){
+            label{
+                background-color: rgb(228, 243, 255);
+            }
+        }
+        .Descripcion{
+            background-color: rgb(241, 241, 241);
+            height: 100%;
+        }
+    }
+}
+#DivBotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#Contenido{
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    input{
+        width: 80%;
+    }
+    img{
+        width: 300px !important;
+        height: 150px !important;
+    }
+    textarea{
+        min-width: 80%;
+        max-width: 80%;
+        height: 10vh;
+    }
+    
+    
+}
+#ContenidoImagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+#ContenidoCodigos{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+    padding-bottom: 200px;
+    img{
+        padding-top: 5px;
+    }
+    input{
+        width: 20px;
+    }
+}
+#TablaCategorias{
+    width: 100%;
+
+        border-spacing: 0;
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+    th{
+        width: 50%;
+        background-color: #005895;
+                color:white;
+    }
+    tr:nth-child(even){
+        background-color: rgb(221, 239, 255);
+    }
+}
+
+#Ventana{
+    position:fixed;
+    width: 50%;
+    height: 100vh;
+    max-height: 100vh;
+    left:50vh;
+    top: 5000px;
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    img{
+        height: 80%;
+        width: 80%;
+    }
+    
+
+    
+    
+    button{
+        margin-top: 10px;
+    }
+    
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 95vw !important;
+        left: 2.5vw !important;
+        #Contenido{
+            margin-bottom: 10vh !important;
+        }
+        
+    }
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:10vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:10vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+#Cerrar{
+    position: absolute;
+    left:10px;
+    width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+.OverFlow{
+    width: 95vw;
+    overflow-y: scroll;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        padding-left: 0;
+        
+    }
+}
+.CrearPeticion{
+    margin-top: 5px;
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+    @media only screen and (max-width: 768px) {
+        font-size: 15px;
+        padding: 15px
+    }
+
+}
+
+.Eliminar{
+    
+    padding: 5px 20px;
+    background-color: #000000;
+    color: white;
+    border: 2px solid rgb(255, 8, 0);
+    font-size: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #ff0000;
+    }
+
+}
+
+.Seleccionado{
+    background-color: #1abc9c;
+}
+
+#Cerrar{
+    position: absolute !important;
+    left: 1vw !important;
+}
+.BotonNormal{
+    margin-right: 10px;
+}
+
+#Ventana{
+    z-index: 300 !important;
+}
+
+#Tabla{
+    
+   
+       border-collapse: collapse;
+        tr{
+            th{
+                background-color: #007dd1;
+                color: white;
+            }
+            td{
+                background-color: white;
+                text-align: center;
+            }
+        }
+    
+}
+#DivBuscador{
+    background-color: white;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 10px;
+}

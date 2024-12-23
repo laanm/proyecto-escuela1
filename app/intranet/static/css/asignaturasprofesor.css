@@ -1,0 +1,52 @@
+#divAsignaturas {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  width: 70vh;
+  border-collapse: collapse;
+}
+table tr {
+  transition: 0.5s;
+}
+table tr th {
+  background-color: rgb(60, 151, 255);
+  padding: 10px;
+}
+table tr th:first-child {
+  border-top-left-radius: 10px;
+}
+table tr th:last-child {
+  border-top-right-radius: 10px;
+}
+table tr td {
+  text-align: center;
+  padding: 10px;
+}
+table tr:nth-child(even) {
+  background-color: rgb(227, 240, 255);
+}
+table tr:hover {
+  background-color: gray;
+}
+
+#CrearPeticion {
+  padding: 5px 20px;
+  background-color: rgb(60, 151, 255);
+  color: black;
+  border: 2px solid rgb(60, 151, 255);
+  font-size: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: background-color 0.5s;
+  margin-bottom: 10px;
+}
+#CrearPeticion:hover {
+  background-color: transparent;
+}/*# sourceMappingURL=asignaturasprofesor.css.map */

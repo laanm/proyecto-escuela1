@@ -1,0 +1,185 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden;
+    background-color: #cecece;
+}
+
+.BarraSuperior{
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    label{
+        position: absolute;
+        left: 5vw;
+    }
+    @media only screen and (max-width: 768px) {
+        label{
+            display: none;
+        }
+        
+    }
+    
+}
+#DivGeneral{
+    margin-top: 2vh;
+    margin-left: 2.5vw;
+    border-radius: 10px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        margin-left: 0;
+        
+        
+    }
+}
+#DivBotones{
+    margin-left: -10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    button{
+        margin-right: 5px;
+    }
+}
+#DivBuscador{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Categorias{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+.OverFlow{
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        padding-left: 0;
+        display: block;
+    }
+}
+.BotonesCategoria{
+    margin-top: 5px;
+        margin-bottom: 5px;
+        margin-inline: 4px;
+        min-width: 150px;
+        padding: 5px;
+        background-color: #438d07;
+        border: 0;
+        text-decoration: none;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        transition: 0.2s;
+        text-align: center;
+        border-radius: 5px;
+        
+        &:hover{
+            background-color: #73ff00;
+            
+        }
+}
+
+#Equipos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Item-Equipos{
+    position: relative;
+    border: solid 1px black;
+    height: 300px;
+    margin: 5px;
+    width: 200px;
+    .Imagen{
+        position: relative;
+        z-index: 1;
+        height: 300px;
+        width: 200px;
+        background-position: center;
+        background-size: cover;
+        background-color: white;
+    }
+    
+    &:hover{
+        .Imagen{
+            filter:brightness(1.1);
+        }
+    }
+
+    label:first-child{
+        position: absolute;
+        z-index: 11;
+        width: 100%;
+        text-align: center;
+        top: 0px;
+        background-color:#005895;
+        color: white;
+        font-weight: bold;
+    }
+    
+}
+
+.Disponible{
+    position: absolute;
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        background-color:#15ff0088;
+        font-weight: bold;
+}
+.NoDisponible{
+    position: absolute;
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        background-color:#34495ee0;
+        color: white;
+        font-weight: bold;
+}
+
+.CrearPeticion{
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+.Actual{
+    background-color: #73ff00;
+    
+}

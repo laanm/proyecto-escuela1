@@ -1,0 +1,73 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+}
+
+.BarraSuperior{
+    @media only screen and (max-width: 768px) {
+        h4{
+            display: none;
+
+        }
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding-left: 0 !important;
+
+        
+    }
+}
+#Principal{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    table{
+        border-collapse: collapse;
+        width: 95%;
+        border-radius: 10px;
+        tr{
+
+            th{
+                background-color: #005895;
+                color: white;
+            }
+            td{
+                background-color: white;
+                text-align: center;
+            }
+
+        }
+    }
+}
+#Contenido{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    *{
+        margin-bottom: 10px;
+    }
+    table{
+        border-collapse: collapse;
+        width: 80%;
+        tr{
+            th{
+                background-color: #005895;
+                color:white;
+                text-align: center;
+            }
+            td{
+                text-align: center;
+            }
+        }
+    }
+
+}

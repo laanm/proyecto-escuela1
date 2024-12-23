@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/historialcordinador.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estados.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/impresion/historialcordinador.js"></script>
+    <title>Impresion</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+    <div class="BarraSuperior">
+        <div id="DivBuscador">
+            <div id="Buscador">
+                <select>
+                <option>Seleccionar profesor</option>
+                <option>Test</option>
+                </select>
+
+            </div>
+            
+            <a  href="{% url 'RenderVistaCordinador' %}"><button class="BotonNormal">Volver</button></a>
+
+            <div><button id="VerTodo" onclick="historialcordinador.mostrardatos(true)">Ver Mas</button></div>
+        </div>   
+        
+        
+
+
+
+    </div>
+    <div class="OverFlow">
+        <table id="Listado">
+
+        </table>
+
+    </div>
+    <div id="Ventana">
+    
+    </div>
+    <div id="Cargando"><div class="preloader"></div></div>
+    <script>
+    
+        const historialcordinador= new javahistorialcordinador("{{request.session.usuario.id}}");
+    </script>
+    
+</body>
+</html>

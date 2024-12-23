@@ -1,0 +1,433 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    background-color: #cecece;
+    
+}
+
+.OverFlow{
+    overflow: auto;
+    width: 100%;
+    height: 90%;
+}
+#MenuContenido{
+    display: flex;
+    align-items: center;
+    background-color: #005895;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#TablaExcel{
+    border-collapse: collapse;
+    tr:first-child{
+        th{
+            height: 5vh !important;
+            max-height: 5vh !important;
+            select{
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+    }
+    th{
+        position: relative;
+        white-space: nowrap;
+        height: 5vh !important;
+        width: 5vw !important;
+        min-width: 5vw !important;
+        max-height: 10vh !important;
+        background-color: #34495e;
+        color: #00ffcc;
+        font-size: medium;
+       
+    }
+    td{
+        height: 7vh;
+        background-color: white;
+        font-size: small;
+        color: black;
+        white-space: nowrap;
+        border: 1px solid black;
+    }
+}
+#DivPrincipal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    #Botones{
+        background-color: #005895;
+        height: 8vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        button{
+            margin-right: 10px;
+        }
+    }
+    h2,.SeccionPersonalizada{
+        width: 95%;
+        text-align: center;
+        background-color: #34495e;
+        color: white;
+        
+    }
+    h3{
+        width: 95%;
+        background-color: white;
+        text-align: center;
+    }
+    #TablaEstudiante,#TablaPadre,#TablaMadre,#TablaAntecedentesAcademicos,#AntecedentesSociales,#AntecendesDeSalud,#TableDocumentacion,#TablaDeberes,.TablaPersonalizada{
+        border: solid;
+        width: 95%;
+        background-color: rgb(255, 255, 255);
+        border-collapse: collapse;
+        th{
+            background-color: #006FBB;
+            color: white;
+            border: solid 1px black;
+            
+        }
+        td{
+            border: solid 1px;
+            input,select{
+                text-align: center;
+                width: 100%;
+                height: 40px;
+                font-size: medium;
+                
+                &:focus{
+                    background-color: #c5c5c5;
+                    color: black;
+                }
+                &:hover{
+                background-color: #c5c5c5;
+                }
+            }
+            
+            
+        }
+       
+    }
+}
+
+.TituloTabla{
+    width: 100%;
+    text-align: center;
+    background-color: red;
+    th{
+        width: 100%;
+        background-color: blue;
+    }
+}
+
+.CrearPeticion{
+    margin-top: 10px;
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+#Personalizado,#TablasPersonalizadas{
+    width: 100%;
+   
+}
+
+.TablaPersonalizada{
+    width: 100%;
+    tr{
+        th{
+            min-width: 50%;
+            width: 50%;
+        }
+    }
+}
+
+#Ventana{
+    position:fixed;
+    width: 90vw;
+    height: 100vh;
+    max-height: 100vh;
+    left:7vw;
+    top: 5000px;
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    img{
+        height: 80%;
+        width: 80%;
+    }
+    
+        
+    
+    
+    button{
+        margin-top: 10px;
+    }
+    
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 5vw;
+    
+    }
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:10vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:10vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+
+#Tabla{
+    margin-top: 5px;
+    border-collapse: collapse;
+    width: 100%;
+    tr{
+        transition: 0.5s;
+        max-width: 250px;
+        background-color: white;
+        th{
+            
+            background-color: #34495e;
+            padding: 10px;
+            max-width: 250px;
+            
+        }
+        th:first-child{
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child{
+            border-top-right-radius: 10px;
+        }
+        td{
+            color: black;
+            text-align: center;
+            
+        }
+        
+    }
+}
+#Contenido{
+    width: 100%;
+    height: 85%;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    
+        
+    
+    
+    
+}
+
+#Cerrar{
+    position: absolute;
+    left:10px;
+    width: 30px;
+        height: 30px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+
+
+#Menu{
+    position: fixed;
+    display: flex;
+    width: fit-content;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    flex-direction: column;
+    padding: 5px;
+    background-color: #830000;
+    left: -1000px;
+    top:30vh;
+    h2{
+        text-align: center;
+        color: white;
+    }
+    button{
+        padding: 1px;
+        border: 1px solid #00ffcc;
+        background-color: #34495e;
+        color: white;
+        border-radius: 20px;
+        margin-top: 5px;
+        &:hover{
+            background-color: #00ffcc;
+            color: black;
+        }
+    }
+}
+.AbrirMenu{
+    animation-name: AbrirMenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.CerrarMenu{
+    animation-name: CerrarMenu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes AbrirMenu{
+    0%{
+        left:-1000px
+    }
+    1%{
+        left:-200px
+    }
+    100%{
+        left:0px;
+    }
+}
+@keyframes CerrarMenu{
+    0%{
+        left:0px;
+    }
+    
+    100%{
+        left:-200px
+        
+    }
+}
+
+.Edit{
+
+}
+
+.BEdit{
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #00ffcc;
+    border: #00ffcc solid 1px;
+    padding-inline: 5px;
+    &:hover{
+        background-color: #00ffcc;
+        color: black;
+    }
+}
+
+.BEliminar{
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #ff0000;
+    border: #ff0000 solid 1px;
+    padding-inline: 5px;
+    &:hover{
+        background-color: #ff0000;
+        color: rgb(0, 0, 0);
+    }
+
+}
+
+#MalditoCanvas{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    #BotonesCanvas{
+        position: absolute;
+        z-index: 999999999;
+        top: 20px;
+
+    }
+    #FondoBlanco{
+        background-color: white;
+        width: 800px;
+        height: 600px;
+        canvas{
+            
+        }
+    }
+    
+    
+    
+}

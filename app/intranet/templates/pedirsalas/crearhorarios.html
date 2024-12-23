@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Intranet</title>
+    <link rel="stylesheet" href="{% static 'css/crearhorarios.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+</head>
+<body>
+    {% include "nav.html"%}
+    <form action="{% url 'CrearHorarios' %}" method="post">
+        {% csrf_token %}
+
+            <div>
+
+                <h2>Ingresa Horario</h2>
+                <label for="">Desde:</label>
+                <input type="text" name="desde">
+                <label for="">Hasta:</label>
+                <input type="text" name="hasta">
+
+                <button>Crear Horario</button>
+
+            </div>
+
+
+
+    </form>
+
+
+    
+
+</body>
+
+</html>

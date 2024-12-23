@@ -1,0 +1,88 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/vermatriculas.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/fabric.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
+    
+    <script src="/static/js/FileSaver.js"></script>
+
+    
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/matriculas/vermatriculas.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    {% include 'nav.html' %}
+        <div class="BarraSuperior">
+            Ver Matriculas
+            <div id="DivBotones">
+                <button class="BotonNormal" onclick="vermatriculas.descargartodos()">Imprimir Todo</button>
+                <button class="BotonNormal" onclick="vermatriculas.ventanadecursos()">Imprimir Algunos Cursos</button>
+                <button class="BotonNormal"><a href="{% url 'RenderCrearMatriculas' %}">Crear Matricula</a></button>
+                
+            </div>
+
+        </div>
+        
+        <div id="DivPrincipal">
+
+            <div id="MenuTop">
+                
+                <label>Tipo de busqueda: 
+                    <select id="TipoBusqueda" onchange="vermatriculas.cambiartipodebusqueda()">
+                    <option value="0">Todos Los Alumnos</option>
+                    <option value="1">Nombre</option>
+                    <option value="2">Rut/IPE</option>
+                    <option value="3">Curso</option>
+                    <option value="4">Sistema de matricula</option>
+                    </select>
+
+                <input id="Buscador" type="text" disabled></label>
+                
+
+            </div>
+                
+            
+
+                <table id="Tabla">
+                    
+
+                </table>
+                
+            
+
+            <img id="ultratest" width="768px" height="432px" style="opacity: 0; position: absolute; left: -10000px;" >
+        
+        <div id="Ventana">
+            
+        </div>
+        
+        <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+        const vermatriculas= new javavermatriculas("{{request.session.usuario.id}}") 
+
+       //https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+        
+       
+    </script>
+</body>
+</html>

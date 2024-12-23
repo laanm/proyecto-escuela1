@@ -1,0 +1,56 @@
+#Cabezera {
+  width: 80%;
+  background-color: green;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#Cabezera div {
+  display: flex;
+  align-items: center;
+}
+#Cabezera div p {
+  font-size: 20px;
+  padding-right: 10px;
+}
+#Cabezera div input {
+  height: 100%;
+  font-size: 20px;
+  border-radius: 10px;
+}
+
+#TablaProfesor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70vh;
+}
+#TablaProfesor table {
+  width: 40%;
+  border-collapse: collapse;
+}
+#TablaProfesor table tr {
+  text-align: center;
+  border-bottom: 1px solid #dddddd;
+}
+#TablaProfesor table tr th {
+  background-color: rgb(60, 151, 255);
+  width: 50vh;
+}
+#TablaProfesor table tr:hover {
+  background-color: gray;
+}
+
+#CrearProfesor {
+  padding: 10px 40px;
+  background-color: rgb(60, 151, 255);
+  color: black;
+  border: 2px solid rgb(60, 151, 255);
+  font-size: 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+}
+#CrearProfesor:hover {
+  background-color: transparent;
+}/*# sourceMappingURL=adminprofesor.css.map */

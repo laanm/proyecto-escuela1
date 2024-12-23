@@ -1,0 +1,44 @@
+version: '3.11'
+
+services:
+  app:
+    build: app
+    container_name: intranet-django
+    restart: always
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "9095:9095"
+    env_file:
+      - ./.env.dev
+    command:
+      "gunicorn --workers=2 intranet.wsgi:application --bind=0.0.0.0:9095 --reload --timeout=300"
+    depends_on:
+      - base_de_datos
+
+  nginx:
+    image: nginx:1.25-alpine
+    restart: always
+    container_name: intranet-ngx
+    ports:
+      - "9099:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - app
+  base_de_datos:
+    container_name: intranet-db
+    image: 'postgres:latest'
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=laan
+      - POSTGRES_PASSWORD=1
+      - POSTGRES_DB=intranet
+    ports:
+      - '9090:5432'
+
+volumes:
+  postgres_data:
+

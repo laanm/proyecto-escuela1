@@ -1,0 +1,149 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+}
+
+#DivGeneral{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#DivBotones{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#DivBuscador{
+    padding-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Categorias{
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    
+}
+.OverFlow{
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        padding-left: 0;
+        display: block;
+    }
+}
+.BotonesCategoria{
+    margin-top: 5px;
+        margin-bottom: 5px;
+        margin-inline: 4px;
+        min-width: 150px;
+        padding: 5px;
+        background-color: #34495e;
+        border: solid black 1px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #00ffcc;
+        transition: 0.5s;
+        text-align: center;
+        border-radius: 5px;
+        
+        &:hover{
+            background-color: #00ffcc;
+            color: black;
+        }
+}
+
+#Equipos{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Item-Equipos{
+    position: relative;
+    border: solid 1px black;
+    height: 300px;
+    margin: 5px;
+    width: 200px;
+    .Imagen{
+        position: relative;
+        z-index: 1;
+        height: 300px;
+        width: 200px;
+        background-position: center;
+        background-size: cover;
+    }
+    
+    &:hover{
+        .Imagen{
+            filter:blur(2px)
+        }
+    }
+
+    label:first-child{
+        position: absolute;
+        z-index: 11;
+        width: 100%;
+        text-align: center;
+        top: 0px;
+        background-color:#34495ed8;
+        color: white;
+        font-weight: bold;
+    }
+    
+}
+
+.Disponible{
+    position: absolute;
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        background-color:#15ff0088;
+        font-weight: bold;
+}
+.NoDisponible{
+    position: absolute;
+        z-index: 10;
+        width: 100%;
+        text-align: center;
+        bottom: 0px;
+        background-color:#34495ee0;
+        color: white;
+        font-weight: bold;
+}
+
+.CrearPeticion{
+    margin-top: 10px;
+    padding: 5px 20px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 15px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+.Actual{
+    background-color: #00ffcc;
+    color: black;
+}

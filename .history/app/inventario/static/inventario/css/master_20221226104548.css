@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900");
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-image: url(/static/inventario/img/background.svg);
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.95);
+  shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+header h1 {
+  margin: 0px;
+  font-size: 30px;
+  padding: 0px;
+  color: #0E2A47;
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+header ul {
+  display: flex;
+  height: 40px;
+  margin: 0px;
+  padding: 0px;
+  gap: 5px;
+  align-items: center;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  display: flex;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #0E2A47;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  gap: 5px;
+}
+header ul li a:hover {
+  background-color: #71BC78;
+}
+
+main {
+  width: 80%;
+  height: auto;
+  min-height: 300px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+main .filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  background-color: rgb(238, 240, 255);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  align-items: center;
+}
+main .filtros div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  background-color: rgb(210, 215, 250);
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+main .filtros div label {
+  font-size: 12px;
+  color: #0E2A47;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  align-items: center;
+  position: relative;
+  padding-left: 0px;
+}
+main .filtros div label:has(button) {
+  padding-left: 22px;
+}
+main .filtros div label button {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #71BC78;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+}
+main .filtros div label button i {
+  font-size: 12px;
+}
+main .filtros div label button i:hover::after {
+  content: "Agregar";
+  font-size: 7px !important;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+  background-color: #71BC78;
+  padding: 4px;
+  border-radius: 5px;
+}
+main .filtros div select, main .filtros div input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #0E2A47;
+}
+main .filtros .filtro_boton {
+  display: flex;
+  width: 100px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #0E2A47;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+}
+main .filtros .filtro_boton:hover {
+  background-color: #71BC78;
+}
+
+.swal_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.swal_form div {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.swal_form div label {
+  font-size: 14px;
+  color: #0E2A47;
+  display: flex;
+  align-items: center;
+}
+.swal_form div input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #0E2A47;
+}
+
+#loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-loader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: conic-gradient(rgba(0, 0, 0, 0) 10%, #0B305B);
+  -webkit-mask: radial-gradient(farthest-side, rgba(0, 0, 0, 0) calc(100% - 8px), #000 0);
+  animation: s3 1s infinite linear;
+}
+
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+.swal_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.swal_container .swal_grupo1, .swal_container .swal_grupo2 {
+  display: flex;
+  width: 90%;
+  flex-wrap: wrap;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  gap: 10px;
+}
+.swal_container .swal_grupo1 div, .swal_container .swal_grupo2 div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.swal_container .swal_grupo1 div label, .swal_container .swal_grupo2 div label {
+  font-size: 14px;
+  color: #0E2A47;
+  display: flex;
+  align-items: center;
+}
+.swal_container .swal_grupo1 div input, .swal_container .swal_grupo2 div input, .swal_container .swal_grupo1 div select, .swal_container .swal_grupo2 div select, .swal_container .swal_grupo1 div textarea, .swal_container .swal_grupo2 div textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 12px;
+  color: #0E2A47;
+}
+.dataTables_wrapper {
+  width: 100%;
+  overflow-x: scroll;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+.dataTables_wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.dataTables_wrapper table thead {
+  background-color: #0E2A47;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px;
+}
+.dataTables_wrapper table thead tr th {
+  padding: 10px;
+}
+.dataTables_wrapper table tbody tr td {
+  padding: 10px;
+  font-size: 12px;
+  color: #0E2A47;
+}/*# sourceMappingURL=master_20221226104548.css.map */

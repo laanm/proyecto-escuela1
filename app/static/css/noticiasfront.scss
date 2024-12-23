@@ -1,0 +1,221 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+    
+}
+.tox-tinymce{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#divTablaNoticias{
+width: 100%;
+margin-top: 10px;
+display: flex;
+flex-direction: column;
+justify-items: center;
+align-items: center;
+
+    table{
+        margin-top: 10px;
+        border-collapse: collapse;
+        border: 1px solid black;
+        th{
+            background-color: #34495e;
+            color: white;
+        }
+        td{
+            text-align: center;
+            padding-block: 10px;
+        }
+        width: 100%;
+        tr:nth-child(even){
+            background-color: rgba(228, 228, 228, 0.432);
+        }
+        tr:hover{
+            background-color: #04ebbd;
+        }
+    }
+}
+
+
+
+#CrearPeticion{
+    
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    margin-bottom: 10px;
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+    @media only screen and (max-width: 768px) {
+        
+        width: 40px;
+        font-size: 14px;
+        
+        
+        
+
+    }
+
+}
+
+.CrearPeticion2{
+    width: 30%;
+    margin-top: 5px;
+}
+
+#Ventana{
+    height: 1000px;
+    width: 80vw;
+    position: fixed;
+    left:10vw;
+    top: 5000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    input,select{
+        margin-bottom: 5px;
+        
+    }
+    label{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        input{
+            margin-bottom:0;
+            margin-right: 5px;
+            width: fit-content;
+            height: fit-content;
+
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 5vw;
+    
+    }
+
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    }
+    @keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:50px;
+    }
+    }
+    .CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    }
+    @keyframes AnimCerrarVentana{
+    0%{
+        top:50px;
+    }
+    100%{
+        top:2000px;
+    }
+    }
+
+#Separador{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    #etc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        input[type=text],label{
+            width: 80%;
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+        textarea{
+            width: 90%;
+        }
+        
+        
+    }
+    
+}
+.tox-tinymce{
+    height: 500px;
+}
+
+
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

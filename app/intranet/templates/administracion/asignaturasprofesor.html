@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <link rel="stylesheet" href="{% static 'css/asignaturasprofesor.css'%}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    <script src="/static/js/administracion/asignarasignaturas.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    {% include "nav.html" %}
+    
+    <div id="divAsignaturas">
+
+        <div>
+            <form action="{% url 'PostAsignaturasProfesor' %}" method="post">
+                {% csrf_token %}
+                AAAAAAAAA
+                <label for="">Profesor: </label>
+                <select name="profesor" id="" >
+                    
+                    
+                    <option value="{{Profesor.id}}">{{Profesor.user}}</option>
+
+                    
+                </select>
+                <label>Selecciona Asignatura</label>
+                <select name="asignatura" id="" required>
+                    <option value="">Seleccionar</option>
+                    {% for a in TodasAsignaturas%}
+                    <option value="{{a.id}}">{{a.nombre}}</option>
+
+                    {%endfor%}
+                </select>
+                <button type="sumbit" id="CrearPeticion">Agregar Asignatura</button> 
+
+            </form>
+            
+        </div>
+
+
+        <h2>Asignaturas Profesor</h2>
+
+        <table>
+            <tr>
+                <th>Nombre Asignatura</th>
+                <th>Accion</th>
+            </tr>
+            {% for a in Asignaturas%}
+            <tr>
+                <td>{{a.idasignatura}}</td>
+                <td><a href="{% url 'EliminarAsignaturasProfesor' a.id%}"><button>Eliminar</button></a></td>
+            </tr>
+            {%endfor%}
+
+
+        </table>
+
+    </div>
+    
+    <script>
+
+        const asignarasignaturas= new javaasignarasignaturas();
+
+    </script>
+
+</body>
+</html>

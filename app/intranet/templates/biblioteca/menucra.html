@@ -1,0 +1,45 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav.css'%}">
+    <script src="https://kit.fontawesome.com/e73c1f6447.js" crossorigin="anonymous"></script>
+
+    
+    <link rel="stylesheet" href="{% static 'css/equipos.css'%}">
+    <script src="https://cdn.tiny.cloud/1/0hlvdpmuocdtyv6xz61ds9w0yq0vt508x06sr8gaok6it2q9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/js/MasterMain.js"></script>
+    <script src="/static/js/sweetalert2.js"></script>
+    <script src="/static/js/axios.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    {% include 'nav.html' %}
+        
+    <div style="display: flex; justify-content: center; height: 80vh;  width:100%; align-items: center;">
+        
+        <a href="{% url 'RenderLibrosCra' %}"><button class="BotonNormal" style="font-size: 40px; margin-right: 10px; height: 50px;">Libros</button></a>
+        <a href="{% url 'RenderEquiposCra' %}"><button class="BotonNormal" style="font-size: 40px; height: 50px;">Equipos</button></a>
+        
+    </div>
+        
+        
+        
+        <div id="Ventana">
+            
+        </div>
+        <div id="Cargando" style="display: none;"><div class="preloader"></div></div>
+    <script>
+
+       //https://parzibyte.me/blog/2019/08/19/codigos-barras-javascript-jsbarcode/
+        
+
+    </script>
+</body>
+</html>

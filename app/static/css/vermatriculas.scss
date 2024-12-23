@@ -1,0 +1,228 @@
+
+#DivPrincipal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.DivCursos{
+    margin: 2px;
+    padding:10px;
+    min-width: 150px;
+    border-radius: 10px;
+    border: solid 1px rgba(0, 0, 0, 0.705);
+    text-align: center;
+    input[type="checkbox"]{
+        margin: 5px;
+    }
+}
+.TdEliminar{
+    width: 10%;
+}
+#MenuTop{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Tabla{
+    width: 100%;
+    background-color: rgb(223, 255, 252);
+    font-size: 20px;
+    font-weight: bold;
+    border-collapse: collapse;
+    tr:hover{
+        background-color: white;
+    }
+    
+    td{
+        height: 7vh;
+        
+        border-top: 1px solid rgb(97, 218, 255);
+        border-bottom: 1px solid rgb(97, 218, 255);
+        text-align: center;
+        padding-right: 10px;
+        button{
+            float: right;
+            
+        }
+    }
+}
+
+.CrearPeticion{
+    margin-top: 10px;
+    padding: 10px 40px;
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+.BEliminar{
+    border-radius: 10px;
+    background-color: #ff0000;
+    font-size: 20px;
+    color: #ffffff;
+    border: #ff0000 solid 1px;
+    padding-inline: 5px;
+    &:hover{
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+    }
+
+}
+
+#Ventana{
+    position:fixed;
+    width: 80vw;
+    height: 100vh;
+    max-height: 100vh;
+    left:10vw;
+    top: 5000px;
+    z-index: 100;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* From https://css.glass */
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    h1{
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    
+    
+    
+        
+    
+    
+    button{
+        margin-top: 10px;
+    }
+
+    @media only screen and (max-width: 768px) {
+        
+        width: 90vw;
+        left: 5vw;
+    
+    }
+}
+
+.AbrirVentana{
+    animation-name: AnimSubirVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+    0%{
+        top:2000px;
+    }
+    100%{
+        top:5vh;
+    }
+
+    
+    
+}
+.CerrarVentana{
+    
+    animation-name: AnimCerrarVentana;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+    0%{
+        top:5vh;
+    }
+    100%{
+        top:2000px;
+    }
+}
+#DivImagen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+    img{
+        text-align: center;
+    }
+    
+    
+}
+#Cerrar{
+    position: absolute;
+    
+    width: 30px;
+        height: 30px;
+        left: 10px;
+        padding: 0;
+        border-radius: 100%;
+        border: solid 1px rgb(0, 0, 0);
+        background-color: red;
+        color: white;
+        font-weight: bold;
+
+    &:hover{
+        background-color: rgb(255, 102, 102);
+
+    }
+}
+#Contenido{
+    margin-top: 15px;
+    width: 95%;
+    overflow-y: scroll;
+    padding-bottom: 150px;
+    h2{
+        text-align: center;
+    }
+    #TablaEstudiante,#TablaPadre,#TablaMadre,#TablaAntecedentesAcademicos,#AntecedentesSociales,#AntecendesDeSalud,#TableDocumentacion,#TablaDeberes,.TablaPersonalizada{
+        border: solid black;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        border-collapse: collapse;
+        th{
+            background-color: rgb(255, 233, 106);
+            border: solid 1px;
+            color: black;
+        }
+        td{
+            border: solid 1px;
+            text-align: center;
+            color: black;
+            input,select{
+                text-align: center;
+                width: 100%;
+                &:focus{
+                    background-color: #00ffcc;
+                    color: black;
+                }
+                &:hover{
+                background-color: #00ffcc;
+                }
+            }
+            
+        }
+    }
+
+}
+

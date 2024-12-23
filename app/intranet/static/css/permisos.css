@@ -1,0 +1,30 @@
+body {
+  background-color: #cecece;
+}
+
+#Tablin {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#Tablin table {
+  width: 90%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+#Tablin table tr th {
+  background-color: #005895;
+  color: white;
+}
+#Tablin table tr td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+#Tablin table tr:nth-child(even) {
+  background-color: rgb(227, 241, 253);
+}/*# sourceMappingURL=permisos.css.map */

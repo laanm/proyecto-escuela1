@@ -1,0 +1,240 @@
+html,body //esto no deja espacio en blanco en movil 
+{
+    width: 95vw;
+    height: 100%;
+    margin: 0px;
+    overflow-x: hidden; 
+}
+
+#divCordinador{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.BarraSuperior{
+    padding-left: 1vw !important;
+}
+#Buscador{
+    display: flex;
+    align-items: center;
+    *{
+        margin-left: 3px;
+    }
+    
+}
+.OverFlow{
+    width: 95vw;
+    overflow-y: scroll;
+    @media only screen and (max-width: 768px) {
+        width: 100vw;
+        padding-left: 0;
+        
+    }
+}
+#Listado{
+    border-collapse: collapse;
+    width: 100%;
+    tr:nth-child(odd){
+        background-color: #5050502f;
+    }
+    tr{
+        transition: 0.5s;
+        th{
+            
+            background-color: #005895;
+            color: white;
+            padding: 10px;
+            
+        }
+        
+        td{
+            text-align: center;
+            padding:10px; 
+
+        }
+        
+
+        
+        &:hover{
+            background-color: gray;
+        }
+    }
+    
+
+}
+
+#DivBuscador{
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    select{
+        margin-right: 5px;
+    }
+    a{
+        margin-left: 1vw;
+    }
+    label{
+        font-size: x-large;
+    }
+    @media only screen and (max-width: 768px) {
+        width: 100%;
+        
+        a{
+            margin-left: 0;
+        }
+
+    }
+}
+
+#CrearPeticion{
+    width: 130px;
+    height: 45px;
+   
+    background-color: #34495e;
+    color: white;
+    border: 2px solid #1abc9c;
+    font-size: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+#CrearPeticion2{
+    width: 100px;
+    height: 30px;
+   
+    background-color: #34495e;
+    color: white;
+    border: 1px solid #1abc9c;
+    
+    border-radius: 30px;
+    text-decoration: none;
+    
+    transition: background-color 0.5s;
+    
+    &:hover {
+        
+        background-color: #1abc9c;
+    }
+
+}
+
+
+.PeticionRechazada{
+            
+    background-color: rgb(255, 85, 85);
+    
+
+
+
+}
+#Cargando{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top:0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(128, 128, 128, 0.692);
+    label{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+}
+
+.preloader {
+    
+    width: 70px;
+    height: 70px;
+    border: 10px solid #eee;
+    border-top: 10px solid #1abc9c;
+    border-radius: 50%;
+    animation-name: girar;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes girar {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  #Ventana{
+    height: 1000px;
+    width: 40vw;
+    position: fixed;
+    left:30vw;
+    top: 5000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+    background: #192f31c2;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.6px);
+    -webkit-backdrop-filter: blur(7.6px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    input,select{
+        margin-bottom: 5px;
+    }
+    textarea{
+        height: 100px;
+        width: 100%;
+    }
+
+}
+.AbrirVentana{
+animation-name: AnimSubirVentana;
+animation-fill-mode: forwards;
+animation-duration: 1s;
+}
+@keyframes AnimSubirVentana{
+0%{
+    top:2000px;
+}
+100%{
+    top:100px;
+}
+}
+.CerrarVentana{
+
+animation-name: AnimCerrarVentana;
+animation-fill-mode: forwards;
+animation-duration: 1s;
+}
+@keyframes AnimCerrarVentana{
+0%{
+    top:100px;
+}
+100%{
+    top:2000px;
+}
+}

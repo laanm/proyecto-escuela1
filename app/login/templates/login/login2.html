@@ -1,0 +1,64 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+
+    <title>
+        Inicio de sesión
+    </title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/login.css'%}">
+    <script src="{% static 'login/js/vue.global.js' %}"></script>
+    <script src="{% static 'login/js/axios.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/4be2f9d56b.js" crossorigin="anonymous"></script>
+    
+
+    <script>
+        globalThis.token = "{{csrf_token}}";
+        setTimeout(function() {
+            console.clear();
+        },250)
+        
+    </script>
+</head>
+
+<body>
+
+
+<form id="login" class="content">
+    <div class="form">
+        <div class="form-left" @keyup.enter="login">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h2 >Bienvenido!</h2>
+            <p>Por favor ingrese sus datos para iniciar sesión.</p>
+            
+            <div class="inputContainer" tooltip-data="Ingresar Correo Electronico" >
+                <input  type="text" placeholder="Correo Electronico" v-model="email">
+                <i class="fa-solid fa-envelope inputIcon"></i>
+            </div>
+            <div class="inputContainer" tooltip-data="Ingresar Contraseña">
+                <input :type="emailShow? 'text' : 'password'" placeholder="Contraseña" v-model="pass" autocomplete=false>
+                <i class="fa-solid fa-lock inputIcon"></i>
+                <i :class="emailShow ? 'fa-solid fa-eye-slash look' : 'fa-solid fa-eye look'" @click="showPass"></i>
+            </div>
+
+
+            <button type="button" v-on:click="login">Iniciar sesión</button>
+            
+            
+        </div>
+
+        <div class="form-right">
+            Bienvenido!
+        </div>
+    </div>
+</form>
+
+<script src="{% static 'login/js/login.js' %}"></script>
+</body>
+
+</html>

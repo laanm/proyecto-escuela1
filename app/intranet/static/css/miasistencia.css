@@ -1,0 +1,184 @@
+html, body {
+  width: 95vw;
+  height: 100%;
+  margin: 0px;
+  overflow-x: hidden;
+  background-color: #cecece;
+}
+
+#Principal {
+  margin-top: 1vh;
+  margin-left: 2.5vw;
+  width: 90vw;
+  height: 90vh;
+  background-color: white;
+  border-radius: 10px;
+}
+#Principal h2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+#Informacion {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#Informacion #BarraTotal {
+  width: 90%;
+  height: 100px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+#Informacion #BarraTotal table {
+  pointer-events: none;
+  width: 100%;
+  position: absolute;
+  table-layout: fixed;
+  border-collapse: collapse;
+  top: 0px;
+}
+#Informacion #BarraTotal table tr th:first-child {
+  border-left: 0 !important;
+}
+#Informacion #BarraTotal table tr th {
+  border-left: 1px solid black;
+}
+#Informacion #BarraTotal #BarraHorario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 50%;
+  border: 1px solid black;
+  background-color: rgb(219, 219, 219);
+}
+#Informacion #BarraTotal #BarraAnterior {
+  position: absolute;
+  width: 0;
+  height: 50%;
+  border: 1px solid black;
+  background-color: rgb(0, 255, 242);
+}
+#Informacion #BarraTotal #BarraActual {
+  position: absolute;
+  width: 0;
+  height: 50%;
+  border: 1px solid black;
+  background-color: rgb(0, 128, 0);
+}
+#Informacion #BarraTotal #BarraSiguiente {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 0;
+  height: 50%;
+  border: 1px solid black;
+  background-color: rgb(255, 123, 0);
+}
+
+#Tabla {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+#Tabla tr th {
+  background-color: #004475;
+  color: white;
+}
+#Tabla tr td {
+  text-align: center;
+  empty-cells: show;
+  border: 1px solid rgba(0, 0, 0, 0.459);
+}
+
+#InforHorario table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+#InforHorario table tr th {
+  background-color: #004475;
+  color: white;
+}
+#InforHorario table tr td {
+  text-align: center;
+  empty-cells: show;
+  border: 1px solid rgba(0, 0, 0, 0.459);
+}
+
+.DiaNoLaboral {
+  background-color: rgb(228, 67, 67) !important;
+}
+
+#Hoy {
+  background-color: #1ac022 !important;
+}
+
+#Ventana #Contenido {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+#Ventana #Contenido #ContenedorDias {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.Dias {
+  width: 12%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.Dias label {
+  text-align: center;
+  width: 50%;
+}
+.Dias input {
+  width: 50%;
+}
+
+.Presente {
+  background-color: green !important;
+  cursor: pointer;
+}
+.Presente:hover {
+  filter: brightness(1.2);
+}
+
+.Atrasado {
+  background-color: rgb(255, 153, 0) !important;
+  color: rgb(31, 31, 31) !important;
+  font-weight: bold;
+  cursor: pointer;
+}
+.Atrasado:hover {
+  filter: brightness(1.2);
+}
+
+.Ausente {
+  background-color: aliceblue;
+}
+
+.Seleccionado {
+  background-color: #53AF09;
+  color: white;
+}/*# sourceMappingURL=miasistencia.css.map */

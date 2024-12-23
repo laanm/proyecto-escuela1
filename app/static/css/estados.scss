@@ -1,0 +1,193 @@
+.EnEspera{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: rgb(0, 4, 255);
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        color: white;
+        animation-name: AnimEnEspera;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+        
+    }
+
+}
+@keyframes AnimEnEspera{
+    0%{
+        background-color: rgb(0, 102, 255);
+    }
+    50%{
+        background-color: rgb(0, 60, 226);
+    }
+    100%{
+        background-color: rgb(0, 102, 255);
+    }
+    
+}
+.Pendiente{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: orange;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        animation-name: AnimPendiente;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+        
+    }
+}
+@keyframes AnimPendiente{
+    0%{
+        background-color: orange;
+    }
+    50%{
+        background-color: rgb(255, 185, 56);
+    }
+    100%{
+        background-color: orange;
+    }
+    
+}
+
+.Aprobado{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: green;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        animation-name: AnimAprobado;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+        
+    }
+}
+@keyframes AnimAprobado{
+    0%{
+        background-color: green;
+    }
+    50%{
+        background-color: rgb(0, 160, 0);
+    }
+    100%{
+        background-color: green;
+    }
+    
+}
+.Rechazado{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: red;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+ 
+        
+    }
+}
+@keyframes AnimRechazado{
+    0%{
+        background-color: red;
+    }
+    50%{
+        background-color: rgb(255, 98, 98);
+    }
+    100%{
+        background-color: red;
+    }
+    
+}
+
+.Impreso{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: aqua;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        animation-name: AnimImpreso;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+        
+    }
+}
+@keyframes AnimImpreso{
+    0%{
+        background-color: rgb(0, 218, 218);
+    }
+    50%{
+        background-color: aqua;
+    }
+    100%{
+        background-color: rgb(0, 218, 218);
+    }
+    
+}
+
+.Entregado{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    padding-left: 5px;
+    p{
+        width: 110px;
+        background-color: purple;
+        padding: 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        @media only screen and (max-width: 768px) {
+            width: 60px;
+        }
+ 
+        
+    }
+}
+@keyframes AnimEntregado{
+    0%{
+        background-color: purple;
+    }
+    50%{
+        background-color: rgb(255, 97, 255);
+    }
+    100%{
+        background-color: purple;
+    }
+    
+}

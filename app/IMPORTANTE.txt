@@ -1,0 +1,7 @@
+Hola, gracias por usar MiniOS... Por favor para poder continuar manteniendo este proyecto y publicando actualizaciones solo debes usar el Navegador Recomendado que esta el link en el escritorio, bajar solamente desde ese link de referido, con ello apoyaras el proyecto para futuras actualizaciones, si no deseas usarlo como navegador principal solamente instalalo y habrelo al menos 5 minutos al dias durante 31 dias, asi estaras apoyando este proyecto, las descargas y futuras actualizaciones estaran en la web oficial.
+
+https://www.windowsminios.org
+
+Gracias!!!
+
+PD: Con este navegador ya no habra publicidad, es creado por el creador del codigo Java Script, Brendan Eich, y esta realmente GENIAL.

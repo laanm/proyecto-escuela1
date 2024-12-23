@@ -1,0 +1,14 @@
+#divCursos {
+  display: flex;
+  justify-content: center;
+}
+#divCursos form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(60, 151, 255);
+  border-radius: 10px;
+  padding: 10px;
+}
+#divCursos form input, #divCursos form select {
+  margin-bottom: 5px;
+}/*# sourceMappingURL=crearcursos.css.map */
